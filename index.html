@@ -1,15 +1,60 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 
 <head>
+	<style>
+		body {
+			font-size: 15px;
+			margin: 0;
+			padding: 0;
+		}
+
+		#hostname {
+			padding: 0;
+			float: left !important;
+			border-right: solid black 3px;
+		}
+
+		#menu ul {
+			overflow: hidden;
+			list-style-type: none;
+			background-color: #444444;
+		}
+
+		#menu li {
+			float: left;
+		}
+
+		#menu a {
+			font-size: 20px;
+			display: block;
+			text-align: center;
+			padding: 10px;
+			text-decoration: none;
+			color: white;
+		}
+
+		#menu #offsite {
+			float: right;
+			color: orange;
+		}
+
+		#menu li a:hover {
+			background-color: #111111;
+		}
+	</style>
 </head>
 
 <body>
-	<h1> Jurjens' site!!!</h1>
-	<div class="menu">
+	<div id="menu">
 		<ul>
-			<li><a href="https://wiki.jurjen.dev">notes</a></li>
-			<li><a href="https://github.com/snhmibby">github</a></li>
+			<li id="hostname"><a href="/">Home</a></li>
+			<li><a href="/work">Work</a></li>
+			<li><a href="/hobby">Hobby</a></li>
+			<li><a href="/contact">Contact</a></li>
+			<li><a href="/links">Links</a></li>
+			<li id="offsite"><a href="https://wiki.jurjen.dev">wiki</a></li>
+			<li id="offsite"><a href="https://github.com/snhmibby">github</a></li>
 		</ul>
 	</div>
 	<div class="content">
