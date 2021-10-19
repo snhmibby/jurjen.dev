@@ -4,42 +4,46 @@
 <head>
 	<style>
 		body {
-			font-size: 15px;
+			font-size: 13px;
 			margin: 0;
-			padding: 0;
+			padding: 5;
 		}
 
-		#hostname {
-			padding: 0;
-			float: left !important;
-			border-right: solid black 3px;
-		}
-
-		#menu ul {
+		#menu {
 			overflow: hidden;
-			list-style-type: none;
-			background-color: #444444;
-		}
-
-		#menu li {
-			float: left;
+			background-color: #333333;
+			text-align: center;
 		}
 
 		#menu a {
-			font-size: 20px;
-			display: block;
-			text-align: center;
-			padding: 10px;
 			text-decoration: none;
 			color: white;
+			font-size: 15;
+			padding: 15px;
 		}
 
-		#menu #offsite {
+		.hostname {
+			float: left;
+			border-right: solid black 3px;
+		}
+
+		.rollout {
+			max-width: 0;
+			float: left;
+			overflow: hidden;
+			transition-property: max-width;
+			transition: 1s ease;
+		}
+
+		#menu:hover .rollout {
+			max-width: 700px;
+		}
+
+		.offsite {
 			float: right;
-			color: orange;
 		}
 
-		#menu li a:hover {
+		#menu a:hover {
 			background-color: #111111;
 		}
 	</style>
@@ -47,15 +51,13 @@
 
 <body>
 	<div id="menu">
-		<ul>
-			<li id="hostname"><a href="/">Home</a></li>
-			<li><a href="/work">Work</a></li>
-			<li><a href="/hobby">Hobby</a></li>
-			<li><a href="/contact">Contact</a></li>
-			<li><a href="/links">Links</a></li>
-			<li id="offsite"><a href="https://wiki.jurjen.dev">wiki</a></li>
-			<li id="offsite"><a href="https://github.com/snhmibby">github</a></li>
-		</ul>
+		<div class="hostname"><a href="/">Home</a></div>
+		<div class="rollout"><a href="/work">Work</a></div>
+		<div class="rollout"><a href="/hobby">Hobby</a></div>
+		<div class="rollout"><a href="/contact">Contact</a></div>
+		<div class="rollout"><a href="/links">Links</a></div>
+		<div class="offsite"><a href="https://wiki.jurjen.dev">wiki</a></div>
+		<div class="offsite"><a href="https://github.com/snhmibby">github</a></div>
 	</div>
 	<div class="content">
 		<p>Keep on hanging on!<br>
