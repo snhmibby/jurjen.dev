@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "jurjen.dev/"
 languageCode = "en-us"
-title = "simple hugo test with boostrap css"
+title = "My WWW"
 sectionPagesMenu = "main"
