@@ -1,0 +1,4 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "simple hugo test with boostrap css"
+sectionPagesMenu = "main"
