@@ -1,18 +1,3 @@
 /* See:
  * https://css-tricks.com/styling-code-in-and-out-of-blocks/
  */
-
-pre code {
-  display: block;
-  background: none;
-  white-space: pre;
-  -webkit-overflow-scrolling: touch;
-  overflow-x: scroll;
-  max-width: 100%;
-  min-width: 100px;
-  padding: 0;
-}
-/*slightly smaller font is nice */
-code {
-	font-size: 10px;
-}

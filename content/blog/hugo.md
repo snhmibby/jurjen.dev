@@ -4,7 +4,7 @@ date: 2021-10-22T11:41:22+02:00
 draft: false
 ---
 
-# Building websites 'without html'
+# Building websites with Markdown instead of Html
 
 When you write more than a few pages of Html, you quickly get tired of the nonsense.
 Which (among other reasons) is why [Markdown](https://en.wikipedia.org/wiki/Markdown) was build.
