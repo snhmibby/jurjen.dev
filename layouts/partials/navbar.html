@@ -1,23 +1,19 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-	<div class="container">
-		<a class="navbar-brand" href="/">Jurjen.dev</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler">
-		  <span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbar-toggler">
-			<div class="navbar-nav">
-				{{ $currentPage := . }}
-				{{ range .Site.Menus.main }}
-					<a class="nav-link 
-						{{ if $currentPage.IsMenuCurrent "main" . }}
-							active
-						{{ end }}" href="{{ .URL }}" title="{{ .Title }}">
-						{{ .Name }}
-					</a>
-				{{ end }}
-				<a class="nav-link" href="https://wiki.jurjen.dev">Wiki</a>
-				<a class="nav-link" href="https://github.com/snhmibby">Github</a>
-			</div>
-		</div>
-	</div>
-</nav>
+<div id="navigation">
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			{{ $currentPage := . }}
+			{{ range .Site.Menus.main }}
+				<li><a  href="{{ .URL }}"
+					{{ if $currentPage.IsMenuCurrent "main" . }}
+						class="active"
+					{{ end }}>
+					{{ .Name }}
+				</a></li>
+			{{ end }}
+
+			<li><a href="https://wiki.jurjen.dev">Wiki</a></li>
+			<li><a href="https://github.com/snhmibby">Github</a></li>
+		</ul>
+	</nav>
+</div>

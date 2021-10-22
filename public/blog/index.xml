@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Main on My WWW</title>
-    <link>jurjen.dev/</link>
-    <description>Recent content in Main on My WWW</description>
+    <title>Blogs on My WWW</title>
+    <link>jurjen.dev/blog/</link>
+    <description>Recent content in Blogs on My WWW</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Oct 2021 23:13:20 +0200</lastBuildDate><atom:link href="jurjen.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Oct 2021 15:54:14 +0200</lastBuildDate><atom:link href="jurjen.dev/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sass</title>
       <link>jurjen.dev/blog/sass/</link>
