@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tutorials on My WWW</title>
-    <link>jurjen.dev/tutorial/</link>
-    <description>Recent content in Tutorials on My WWW</description>
+    <title>Tutorials on jurjen.dev</title>
+    <link>https://jurjen.dev/tutorial/</link>
+    <description>Recent content in Tutorials on jurjen.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Oct 2021 03:26:20 +0200</lastBuildDate><atom:link href="jurjen.dev/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Oct 2021 03:26:20 +0200</lastBuildDate><atom:link href="https://jurjen.dev/tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>More Templates</title>
-      <link>jurjen.dev/tutorial/hugo/templates/</link>
+      <link>https://jurjen.dev/tutorial/hugo/templates/</link>
       <pubDate>Sat, 23 Oct 2021 03:26:20 +0200</pubDate>
       
-      <guid>jurjen.dev/tutorial/hugo/templates/</guid>
+      <guid>https://jurjen.dev/tutorial/hugo/templates/</guid>
       <description>Improving the default templates The idea for the site seems to be coming together nicely now. There will be several tutorial tracks. Each in their own folder in content/tutorial/track. Now we will create several new html templates to:
  display all tutorial tracks, using a cool responsive card design. display a list of the contents of each single track. display each tutorial  We will explore pagination and since our directory structure is becoming rather deep, add breadcrumbs.</description>
     </item>
     
     <item>
       <title>Navigation</title>
-      <link>jurjen.dev/tutorial/hugo/navbars-and-sass/</link>
+      <link>https://jurjen.dev/tutorial/hugo/navbars-and-sass/</link>
       <pubDate>Fri, 22 Oct 2021 15:54:14 +0200</pubDate>
       
-      <guid>jurjen.dev/tutorial/hugo/navbars-and-sass/</guid>
+      <guid>https://jurjen.dev/tutorial/hugo/navbars-and-sass/</guid>
       <description>Back to learning CSS, SASS edition I thought all stylesheet examples looked convoluted and confusing (they are). So I decided to switch to using a CSS framework (Bootstrap, it&amp;rsquo;s quite nice). However, I came across SASS and it just made CSS much easier to use AND understand. Having a bit of structure makes all the difference for comprehension and readability.
 So I decided to not use bootstrap for this site, but use SASS stylesheets instead.</description>
     </item>
     
     <item>
       <title>Getting Started!</title>
-      <link>jurjen.dev/tutorial/hugo/getting-started/</link>
+      <link>https://jurjen.dev/tutorial/hugo/getting-started/</link>
       <pubDate>Fri, 22 Oct 2021 11:41:22 +0200</pubDate>
       
-      <guid>jurjen.dev/tutorial/hugo/getting-started/</guid>
+      <guid>https://jurjen.dev/tutorial/hugo/getting-started/</guid>
       <description>Building websites with Markdown instead of HTML When you write more than a few pages of HTML, you quickly get tired of the nonsense. Which (among other reasons) is why Markdown was build.
 To convert a collection of markdown files into a functional website and do extra processing to build your website code, you can use a site generator.
 The most famous of these (because it was the &amp;lsquo;first&amp;rsquo;) is Jekyll.</description>
@@ -40,10 +40,10 @@ The most famous of these (because it was the &amp;lsquo;first&amp;rsquo;) is Jek
     
     <item>
       <title>Introduction</title>
-      <link>jurjen.dev/tutorial/hugo/introduction/</link>
+      <link>https://jurjen.dev/tutorial/hugo/introduction/</link>
       <pubDate>Fri, 22 Oct 2021 11:31:20 +0200</pubDate>
       
-      <guid>jurjen.dev/tutorial/hugo/introduction/</guid>
+      <guid>https://jurjen.dev/tutorial/hugo/introduction/</guid>
       <description>First post! Whenever I learn something new or interesting about development or the technologies I use, there will be a small post in my blog and/or on my wiki. Personally, I prefer a wiki, but then I wouldn&amp;rsquo;t get to practice making this cool blagging site.
 Follow along on my journey! In short, every major update on this site since the beginning will get a blog post. If you want to follow along on my process on getting started from 0% with Hugo and website building in general, just follow the blogs from beginning to end.</description>
     </item>

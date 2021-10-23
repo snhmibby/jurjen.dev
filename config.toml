@@ -1,4 +1,4 @@
-baseURL = "jurjen.dev/"
+baseURL = "https://jurjen.dev"
 languageCode = "en-us"
-title = "My WWW"
+title = "jurjen.dev"
 sectionPagesMenu = "main"
