@@ -104,11 +104,9 @@ some CSS trick I learned, and how I used Hugo to improve the functionality of th
 {{- partial &#34;head.html&#34; . -}}
 
 &lt;<span style="color:#f92672">body</span>&gt;
-    {{- partial &#34;header.html&#34; . -}}
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span>&gt;
         {{- block &#34;main&#34; . }}{{- end }}
     &lt;/<span style="color:#f92672">div</span>&gt;
-    {{- partial &#34;footer.html&#34; . -}}
 &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><p>layouts/_default/list.html:</p>
