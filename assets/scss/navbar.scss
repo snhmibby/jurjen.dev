@@ -4,15 +4,30 @@
 
 nav {
 	background-color: #333;
-	display: flex;
-	flex-direction: row;
+
 	a {
-		margin: auto;
+		display: block;
+		text-align: center;
 		padding: 5px;
 		color: white;
 		text-decoration: none;
 		&:hover {
 			background-color: darkred;
+		}
+	}
+
+	.nav-icon-bar,
+	.nav-menu {
+		display: flex;
+	}
+
+	.toggle-visible {
+		display: none;
+	}
+
+	@media (max-width: 350px) {
+		.nav-menu {
+			flex-direction: column;
 		}
 	}
 }
