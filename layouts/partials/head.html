@@ -13,7 +13,7 @@
 	{{ $siteCSS := resources.Get "scss/site.scss" | toCSS $options }}
 
 	{{ $css := $siteCSS | minify }}
-	<link rel="stylesheet" href="{{$css.RelPermalink}}"}}>
+	<link rel="stylesheet" href="{{$css.RelPermalink}}">
 
 
 	<title>
