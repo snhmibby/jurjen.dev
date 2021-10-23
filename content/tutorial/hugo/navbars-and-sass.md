@@ -73,12 +73,10 @@ layouts/partials/navbar.html:
 	</div>
 </nav>
 ```
-Our hamburger icon calls the toggleMenu function when clicked. ToggleMenu uses
-the [JQuery](https://jquery.com/download/)
+Our hamburger icon uses the [JQuery](https://jquery.com/download/)
 [toggleClass](https://devdocs.io/jquery/toggleclass) function to switch the
-toggle-visible class. Which is defined in our scss.
+toggle-visible class. Which is defined in our css:
 
-And the CSS:
 
 assets/scss/navbar.scss
 ```SCSS
