@@ -31,7 +31,12 @@ In partial/head.html, you will want something like this:
 {{ $site := resources.Get "scss/site.scss" | toCSS }}
 <link rel="stylesheet" href="{{$site.RelPermalink}}">
 ```
-This is called a [Pipeline](), they string [template functions]() together. This particular one will look up 'assets/scss/site.scss' call a SASS 'compiler' on it (which produces a CSS object) and then later we use the .RelPermalink method on this object, which tells Hugo to create the css object in our site and link to it.
+This is called a [Pipeline](https://gohugo.io/templates/introduction/#pipes),
+they string [template](https://gohugo.io/templates/introduction/) functions
+together. This example will look up 'assets/scss/site.scss' call a SASS
+'compiler' on it (which produces a CSS object) and then later we use the
+.RelPermalink method on this object, which tells Hugo to create the css object
+in our site and link to it.
 
 I found this [here](https://github.com/spech66/hugo-best-practices#css-and-javascript).
 It's a collection of Hugo tips!

@@ -70,7 +70,12 @@ Conveniently, Hugo has excellent support for them.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!-- Custom CSS --&gt;</span>
 {{ $site := resources.Get &#34;scss/site.scss&#34; | toCSS }}
 &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{$site.RelPermalink}}&#34;</span>&gt;
-</code></pre></div><p>This is called a <a href="">Pipeline</a>, they string <a href="">template functions</a> together. This particular one will look up &lsquo;assets/scss/site.scss&rsquo; call a SASS &lsquo;compiler&rsquo; on it (which produces a CSS object) and then later we use the .RelPermalink method on this object, which tells Hugo to create the css object in our site and link to it.</p>
+</code></pre></div><p>This is called a <a href="https://gohugo.io/templates/introduction/#pipes">Pipeline</a>,
+they string <a href="https://gohugo.io/templates/introduction/">template</a> functions
+together. This example will look up &lsquo;assets/scss/site.scss&rsquo; call a SASS
+&lsquo;compiler&rsquo; on it (which produces a CSS object) and then later we use the
+.RelPermalink method on this object, which tells Hugo to create the css object
+in our site and link to it.</p>
 <p>I found this <a href="https://github.com/spech66/hugo-best-practices#css-and-javascript">here</a>.
 It&rsquo;s a collection of Hugo tips!</p>
 <p>With this snippet in place, you can just edit your scss files and Hugo (if
