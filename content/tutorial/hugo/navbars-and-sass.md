@@ -50,13 +50,13 @@ layouts/partials/navbar.html:
 ```HTML
 <nav id="navigation">
 	<div class="nav-icon-bar">
-		<a href="#" onclick='$(".nav-menu").toggleClass("toggle-visible")'><i class="bi bi-list"></i></a>
+		<a href="#" onclick='$("#main-menu").toggleClass("toggle-visible")'><i class="bi bi-list"></i></a>
 		<a href="/"><i class="bi bi-house-fill"></i></a>
 		<a href="https://wiki.jurjen.dev"><i class="bi bi-stickies-fill"></i></a>
 		<a href="https://github.com/snhmibby"><i class="bi bi-github"></i></a>
 	</div>
 
-	<div class="nav-menu">
+	<div id="main-menu" class="nav-menu">
 		<a href="/">Home</a>
 		{{ $currentPage := . }}
 		{{ range .Site.Menus.main }}
@@ -94,7 +94,6 @@ nav {
 
 	a {
 		display: block;
-		text-align: center;
 		padding: 5px;
 		color: white;
 		text-decoration: none;
@@ -121,12 +120,11 @@ nav {
 ```
 Update ```assets/scss/site.scss``` to include ```navbar.scss```.
 
-Now if only I could figure out how to center the links when it's in column mode...
-
 # Follow along!
-1. The example uses JQuery and Bootstrap Icons. Install both in the static/ directory (or link to a cdn)
+0. [Center the text](https://www.w3schools.com/css/css_text_align.asp) in the links so column mode looks better.
+1. The example uses [jQuery](https://jquery.com/download/) and [Bootstrap Icons](https://icons.getbootstrap.com/). Install both in the static/ directory (or link to a cdn)
    and update the head.html template so that they are automatically added on all our pages.
-2. Hugo has support for menu generation. Set ```sectionPagesMenu="main"``` in
+2. Hugo has support for [menu generation](https://gohugo.io/templates/menu-templates/). Set ```sectionPagesMenu="main"``` in
    config.toml, then create ```partial/navbar.html``` and loop over the
    .Site.Menus.main object to create our menu links.
    Add ```navbar.html``` in the default templates so it is included in the body on all pages.

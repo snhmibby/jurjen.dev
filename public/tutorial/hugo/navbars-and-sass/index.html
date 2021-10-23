@@ -26,13 +26,13 @@
 <nav id="navigation">
 
 	<div class="nav-icon-bar">
-		<a href="#" onclick='$(".nav-menu").toggleClass("toggle-visible")'><i class="bi bi-list"></i></a>
+		<a href="#" onclick='$("#main-menu").toggleClass("toggle-visible")'><i class="bi bi-list"></i></a>
 		<a href="/"><i class="bi bi-house-fill"></i></a>
 		<a href="https://wiki.jurjen.dev"><i class="bi bi-stickies-fill"></i></a>
 		<a href="https://github.com/snhmibby"><i class="bi bi-github"></i></a>
 	</div>
 
-	<div class="nav-menu">
+	<div id="main-menu" class="nav-menu">
 		<a href="/">Home</a>
 		
 		
@@ -89,13 +89,13 @@ to a column layout when the screen gets too small.</p>
 <p>layouts/partials/navbar.html:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navigation&#34;</span>&gt;
 	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-icon-bar&#34;</span>&gt;
-		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;$(&#34;.nav-menu&#34;).toggleClass(&#34;toggle-visible&#34;)&#39;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bi bi-list&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;$(&#34;#main-menu&#34;).toggleClass(&#34;toggle-visible&#34;)&#39;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bi bi-list&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
 		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bi bi-house-fill&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
 		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://wiki.jurjen.dev&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bi bi-stickies-fill&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
 		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/snhmibby&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bi bi-github&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
 	&lt;/<span style="color:#f92672">div</span>&gt;
 
-	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-menu&#34;</span>&gt;
+	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main-menu&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-menu&#34;</span>&gt;
 		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span>&gt;Home&lt;/<span style="color:#f92672">a</span>&gt;
 		{{ $currentPage := . }}
 		{{ range .Site.Menus.main }}
@@ -129,7 +129,6 @@ toggle-visible class. Which is defined in our css:</p>
 
 	<span style="color:#f92672">a</span> {
 		<span style="color:#f92672">display</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">block</span>;
-		<span style="color:#f92672">text-align</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">center</span>;
 		<span style="color:#f92672">padding</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">5px</span>;
 		<span style="color:#f92672">color</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">white</span>;
 		<span style="color:#f92672">text-decoration</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">none</span>;
@@ -154,12 +153,12 @@ toggle-visible class. Which is defined in our css:</p>
 	}
 }
 </code></pre></div><p>Update <code>assets/scss/site.scss</code> to include <code>navbar.scss</code>.</p>
-<p>Now if only I could figure out how to center the links when it&rsquo;s in column mode&hellip;</p>
 <h1 id="follow-along">Follow along!</h1>
-<ol>
-<li>The example uses JQuery and Bootstrap Icons. Install both in the static/ directory (or link to a cdn)
+<ol start="0">
+<li><a href="https://www.w3schools.com/css/css_text_align.asp">Center the text</a> in the links so column mode looks better.</li>
+<li>The example uses <a href="https://jquery.com/download/">jQuery</a> and <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>. Install both in the static/ directory (or link to a cdn)
 and update the head.html template so that they are automatically added on all our pages.</li>
-<li>Hugo has support for menu generation. Set <code>sectionPagesMenu=&quot;main&quot;</code> in
+<li>Hugo has support for <a href="https://gohugo.io/templates/menu-templates/">menu generation</a>. Set <code>sectionPagesMenu=&quot;main&quot;</code> in
 config.toml, then create <code>partial/navbar.html</code> and loop over the
 .Site.Menus.main object to create our menu links.
 Add <code>navbar.html</code> in the default templates so it is included in the body on all pages.</li>
