@@ -6,14 +6,11 @@ series: "Hugo"
 tags: ["tags", "taxonomies", "Hugo", "CSS", "Templates"]
 ---
 
-# Creating order in your document collection
-
 Lets organize the tutorial collection using article tags and tutorial series.
-Then we will write some better looking HTML templates to create displays of the tutorials.
 Along the way we discover Hugo's archetypes, front matter and 'taxonomies'.
 <!--more-->
 
-## Creating order: action plan.
+# Creating order: action plan.
 Now we have some documents in our tutorials section, it is time to organize them.
 To this effect we will do the following:
 1. Create an [archetype](https://gohugo.io/content-management/archetypes/) file for tutorials.
@@ -22,7 +19,7 @@ To this effect we will do the following:
 
 To supplement the official documentation, read some [introductory](https://www.javeriyash.me/blog/hugo-series/) [articles](https://blog.cavelab.dev/2021/07/hugo-series-taxonomy/) about [exactly](https://damien.co/blog/2020-06-29-display-related-content-series-hugo/) this [subject](https://www.kiroule.com/article/add-series-taxonomy-to-hugo-theme/)
 
-### Create an archetype
+## Create an archetype
 An [archetype](https://gohugo.io/content-management/archetypes/) is a text
 template that generates the initial markdown file when you create content with
 'hugo new foo/article.md' This sets default fields in the front matter and adds
@@ -40,18 +37,16 @@ series: ["Unsorted"]
 tags: []
 ---
 
-# {{ replace .Name "-" " " | title }}
-
-!! Enter Summary
+Summary
 <!--more-->
 
-## Introduction
+# Introduction
+Problem outline & approach discussion
 
-### Tutorial
+## Tutorial
+Sketch steps to implement solution
 
-# Follow along!
-Conclusion and Exercises
-
+# Conclusion
 ```
 
 ### Brief intro to Taxonomies
@@ -70,14 +65,94 @@ plugins.  To turn it on, add the following to the configuration file:
 ```
 Bam, that's everything. Go check out /series on your site!
 
-## Creating nicer templates
-Our basic one liner templates have served well, but the time has come to write something more appealing.
-- For starters, we will create layouts/tutorial/single.html, to show our taxonomy info.
-- Then we will create a simple [Card](Basic web design item) that shows the
-  outline of an article, and create new list templates with it.  We will make
-- an explicit index.md and layout.html for the tutorial section,
-  instead of relying on the _default list templates.
+### More navigation
+Now that articles can be part of a series (sorted by date, by default), we can
+add links to the previous and next article in the series. This requires a
+little bit of template programming.
 
+The following template code tries to find the next and previous page in a
+series by comparing each item from first to last to our current page. When the
+current page is the 1st (index 0) or the last (index (len series) - 1), the
+corresponding scratch variable is not set.
 
-# Follow along!
-Put some simple exercises here
+After there is a bit of template HTML generation where we check for the prev
+and next variables and generate the necessary links.
+
+I found this code [here](https://notestoself.dev/posts/hugo-taxonomy-term-next-prev-page-links/).
+
+layout/partials/series_nav.html
+```HTML
+{{ if .Params.series }}
+	{{ $curPage := .Permalink }}
+	{{ $key := .Params.series | urlize }}
+	{{ $series := index .Site.Taxonomies.series $key }}
+	{{ range $i, $p := $series.Pages }}
+		{{ if eq $curPage $p.Permalink }}
+			{{ if gt $i 0 }}
+				{{ .Scratch.Set "prev" (index $series (sub $i 1)) }}
+			{{ end }}
+			{{ if lt $i ((sub (len $series) 1)) }}
+				{{ .Scratch.Set "next" (index $series (add $i 1)) }}
+			{{ end }}
+		{{ end }}
+	{{ end }}
+	<nav class="nav-series">
+		{{ with index .Scratch.Values "prev"}}
+			<a class="nav-prev" href="{{- .Permalink -}}" rel="prev">&larr;</a>
+		{{ end }}
+		<a class="nav-up" href="/series/{{.Params.series | urlize}}">{{.Params.series}} Track</a>
+		{{ with index .Scratch.Values "next"}}
+			<a class="nav-next" href="{{- .Permalink -}}" rel="next">&rarr;</a>
+		{{ end }}
+	</nav>
+{{ end }}
+```
+
+Our partial is included by layout/tutorial/single.html:
+```HTML
+{{ define "main" }}
+{{ partial "series_nav.html" . }}
+<article>
+	{{ .Content }}
+</article>
+{{ partial "series_nav.html" . }}
+{{ end }}
+```
+
+The prev/next navigation is simply centered with a flex display.
+It's a bit rough around the edges, but it will do for now.
+
+navbar.scss:
+```SCSS
+.nav-series {
+	display: flex;
+	justify-content: center;
+	a {
+		text-decoration: none;
+		display: block;
+		padding: 5px;
+	}
+}
+```
+
+### A nice list view
+Remember those summaries we made earlier?
+Now it is time to use them! Let's create a list.html layout specifically for
+the tutorial section, that will display each series as a list of summaries. 
+
+First, we create another partial that will create an HTML summary for a single page:
+
+layouts/partials/summary.html:
+```HTML
+<section class="summary">
+	<h4 class="summary-title"><a href="{{.Permalink}}">{{.Title}}</a></h2>
+	<p class="summary-text">{{.Summary}}</p>
+	{{ if .Params.tags }}
+		whoop print tags here
+	{{ end }}
+</section>
+```
+
+TODO!!
+
+# Exercises

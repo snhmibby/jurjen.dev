@@ -1,5 +1,24 @@
 {{ if .Params.series }}
-	<div class="series-nav">
-		<p>Part of <a href="/series/{{.Params.series | urlize}}">{{.Params.series}}</a></p>
-	</div>
+	{{ $curPage := .Permalink }}
+	{{ $key := .Params.series | urlize }}
+	{{ $series := index .Site.Taxonomies.series $key }}
+	{{ range $i, $p := $series.Pages }}
+		{{ if eq $curPage $p.Permalink }}
+			{{ if gt $i 0 }}
+				{{ .Scratch.Set "prev" (index $series (sub $i 1)) }}
+			{{ end }}
+			{{ if lt $i ((sub (len $series) 1)) }}
+				{{ .Scratch.Set "next" (index $series (add $i 1)) }}
+			{{ end }}
+		{{ end }}
+	{{ end }}
+	<nav class="nav-series">
+		{{ with index .Scratch.Values "prev"}}
+			<a class="nav-prev" href="{{- .Permalink -}}" rel="prev">&larr;</a>
+		{{ end }}
+		<a class="nav-up" href="/series/{{.Params.series | urlize}}">{{.Params.series}} Track</a>
+		{{ with index .Scratch.Values "next"}}
+			<a class="nav-next" href="{{- .Permalink -}}" rel="next">&rarr;</a>
+		{{ end }}
+	</nav>
 {{ end }}

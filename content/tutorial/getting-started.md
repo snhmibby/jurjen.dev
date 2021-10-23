@@ -7,8 +7,6 @@ weight: 2
 tags: ["Hugo", "Markdown", "HTML", "Templates"]
 ---
 
-# Building websites with Markdown content
-
 When you write more than a few pages of [HTML](http://html.com), you quickly get tired of the nonsense.
 Which is why [Markdown](https://en.wikipedia.org/wiki/Markdown) was build.
 We will look at the [Hugo](http://gohugo.io) [site generator](https://en.wikipedia.org/wiki/Web_template_system#Static_site_generators) to fold markdown articles into a functional website.

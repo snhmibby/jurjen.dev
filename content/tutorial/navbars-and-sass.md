@@ -7,13 +7,12 @@ weight: 3
 tags: ["Hugo", "CSS", "jQuery", "Javascript"]
 ---
 
-# Adding a navigation bar with custom CSS
 In this tutorial, we will create a simple navigation bar that works for both
 mobile and desktop browsers. We will look into Hugos Pipelines and do our first
 bit of Javascript programming.
 <!--more-->
 
-## Learning CSS, SASS edition
+# Learning CSS, SASS edition
 
 I thought all stylesheet examples looked convoluted and confusing (they are).
 So I decided to switch to using a CSS framework ([Bootstrap](https://getbootstrap.com/),
@@ -54,7 +53,7 @@ Also, just for kicks, we will add a cool icon bar, with a menu icon and add
 
 This is the HTML template:
 ```HTML
-<nav id="navigation">
+<nav class="nav-main">
 	<div class="nav-icon-bar">
 		<a href="#" onclick='$("#main-menu").toggleClass("toggle-visible")'><i class="bi bi-list"></i></a>
 		<a href="/"><i class="bi bi-house-fill"></i></a>
@@ -91,7 +90,7 @@ The CSS looks like this:
  * Support for small screens through flexbox and media queries
  */
 
-nav {
+.nav-main {
 	background-color: #333;
 
 	a {

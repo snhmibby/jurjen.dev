@@ -1,4 +1,4 @@
-/* Navigation bar, structure is:
+/* Main Navigation bar, structure is:
  * <nav>
  *   <div class="nav-icon-bar"/>
  *   <div class="nav-menu">
@@ -7,7 +7,7 @@
  * Support for small screens through flexbox and media queries
  */
 
-nav {
+.nav-main {
 	background-color: #333;
 
 	a {
@@ -38,3 +38,12 @@ nav {
 	}
 }
 
+.nav-series {
+	display: flex;
+	justify-content: center;
+	a {
+		text-decoration: none;
+		display: block;
+		padding: 5px;
+	}
+}

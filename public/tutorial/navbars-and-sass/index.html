@@ -23,7 +23,7 @@
 	</title>
 </head>
 <body>
-<nav id="navigation">
+<nav class="nav-main">
 
 	<div class="nav-icon-bar">
 		<a href="#" onclick='$("#main-menu").toggleClass("toggle-visible")'><i class="bi bi-list"></i></a>
@@ -52,14 +52,12 @@
 	</div>
 </nav>
 <div id="content">
-
-
 <article>
-	<h1 id="adding-a-navigation-bar-with-custom-css">Adding a navigation bar with custom CSS</h1>
-<p>In this tutorial, we will create a simple navigation bar that works for both
+	<h1>Navigation</h1>
+	<p>In this tutorial, we will create a simple navigation bar that works for both
 mobile and desktop browsers. We will look into Hugos Pipelines and do our first
 bit of Javascript programming.</p>
-<h2 id="learning-css-sass-edition">Learning CSS, SASS edition</h2>
+<h1 id="learning-css-sass-edition">Learning CSS, SASS edition</h1>
 <p>I thought all stylesheet examples looked convoluted and confusing (they are).
 So I decided to switch to using a CSS framework (<a href="https://getbootstrap.com/">Bootstrap</a>,
 it&rsquo;s quite nice).  However, I came across
@@ -88,7 +86,7 @@ adapt to that. It does so by using a <a href="https://css-tricks.com/snippets/cs
 <p>Also, just for kicks, we will add a cool icon bar, with a menu icon and add
 [Javascript](jquery.com/toggleClass documentation link here TODO) code to open and close our menu to provide some fun interaction :D</p>
 <p>This is the HTML template:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navigation&#34;</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-main&#34;</span>&gt;
 	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-icon-bar&#34;</span>&gt;
 		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;$(&#34;#main-menu&#34;).toggleClass(&#34;toggle-visible&#34;)&#39;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bi bi-list&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
 		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bi bi-house-fill&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
@@ -122,7 +120,7 @@ adapt to that. It does so by using a <a href="https://css-tricks.com/snippets/cs
 </span><span style="color:#75715e"> * Support for small screens through flexbox and media queries
 </span><span style="color:#75715e"> */</span>
 
-<span style="color:#f92672">nav</span> {
+<span style="color:#a6e22e">.nav-main</span> {
 	<span style="color:#f92672">background-color</span><span style="color:#a6e22e">:</span> #333;
 
 	<span style="color:#f92672">a</span> {
@@ -161,6 +159,35 @@ and update the head.html template so that they are automatically added on all ou
 </ol>
 <p>Our navigation bar should be added on all pages now! Pretty cool!</p>
 </article>
+
+	
+	
+	
+	
+		
+	
+		
+	
+		
+			
+				
+			
+			
+				
+			
+		
+	
+		
+	
+	<nav class="nav-series">
+		
+			<a class="nav-prev" href="https://jurjen.dev/tutorial/getting-started/" rel="prev">&larr;</a>
+		
+		<a class="nav-up" href="/series/hugo">Hugo Track</a>
+		
+			<a class="nav-next" href="https://jurjen.dev/tutorial/tags/" rel="next">&rarr;</a>
+		
+	</nav>
 
 
 

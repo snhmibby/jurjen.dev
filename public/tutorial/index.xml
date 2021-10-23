@@ -13,8 +13,7 @@
       <pubDate>Thu, 21 Oct 2021 23:13:20 +0200</pubDate>
       
       <guid>https://jurjen.dev/tutorial/introduction/</guid>
-      <description>&lt;h1 id=&#34;lets-learn-web-development-with-hugo&#34;&gt;Let&amp;rsquo;s learn Web Development (with Hugo)&lt;/h1&gt;
-&lt;p&gt;In this series we will explore the basics of HTML, Javascript, CSS and web
+      <description>&lt;p&gt;In this series we will explore the basics of HTML, Javascript, CSS and web
 development by creating a cool tutorial website using the Hugo static website
 generator.&lt;/p&gt;</description>
     </item>
@@ -25,8 +24,7 @@ generator.&lt;/p&gt;</description>
       <pubDate>Fri, 22 Oct 2021 11:41:22 +0200</pubDate>
       
       <guid>https://jurjen.dev/tutorial/getting-started/</guid>
-      <description>&lt;h1 id=&#34;building-websites-with-markdown-content&#34;&gt;Building websites with Markdown content&lt;/h1&gt;
-&lt;p&gt;When you write more than a few pages of &lt;a href=&#34;http://html.com&#34;&gt;HTML&lt;/a&gt;, you quickly get tired of the nonsense.
+      <description>&lt;p&gt;When you write more than a few pages of &lt;a href=&#34;http://html.com&#34;&gt;HTML&lt;/a&gt;, you quickly get tired of the nonsense.
 Which is why &lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;Markdown&lt;/a&gt; was build.
 We will look at the &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_template_system#Static_site_generators&#34;&gt;site generator&lt;/a&gt; to fold markdown articles into a functional website.&lt;/p&gt;</description>
     </item>
@@ -37,8 +35,7 @@ We will look at the &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; &lt;
       <pubDate>Fri, 22 Oct 2021 15:54:14 +0200</pubDate>
       
       <guid>https://jurjen.dev/tutorial/navbars-and-sass/</guid>
-      <description>&lt;h1 id=&#34;adding-a-navigation-bar-with-custom-css&#34;&gt;Adding a navigation bar with custom CSS&lt;/h1&gt;
-&lt;p&gt;In this tutorial, we will create a simple navigation bar that works for both
+      <description>&lt;p&gt;In this tutorial, we will create a simple navigation bar that works for both
 mobile and desktop browsers. We will look into Hugos Pipelines and do our first
 bit of Javascript programming.&lt;/p&gt;</description>
     </item>
@@ -49,9 +46,7 @@ bit of Javascript programming.&lt;/p&gt;</description>
       <pubDate>Sat, 23 Oct 2021 03:26:20 +0200</pubDate>
       
       <guid>https://jurjen.dev/tutorial/tags/</guid>
-      <description>&lt;h1 id=&#34;creating-order-in-your-document-collection&#34;&gt;Creating order in your document collection&lt;/h1&gt;
-&lt;p&gt;Lets organize the tutorial collection using article tags and tutorial series.
-Then we will write some better looking HTML templates to create displays of the tutorials.
+      <description>&lt;p&gt;Lets organize the tutorial collection using article tags and tutorial series.
 Along the way we discover Hugo&amp;rsquo;s archetypes, front matter and &amp;lsquo;taxonomies&amp;rsquo;.&lt;/p&gt;</description>
     </item>
     

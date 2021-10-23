@@ -7,8 +7,6 @@ weight: 1
 tags: []
 ---
 
-# Let's learn Web Development (with Hugo)
-
 In this series we will explore the basics of HTML, Javascript, CSS and web
 development by creating a cool tutorial website using the Hugo static website
 generator.
