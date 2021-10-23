@@ -1,11 +1,14 @@
 ---
-title: "More Templates"
+title: "Tags, Series and Taxonomies"
 date: 2021-10-23T03:26:20+02:00
 draft: false
+tags: ["tags", "taxonomies", "Hugo", "CSS", "Templates"]
+series: "Hugo"
 ---
 
-Writing html templates, using frontmatter and archetypes.
-We also implement a cool card view using CSS and add pagination and breadcrumbs.
+We will organize our tutorial collection using the default Taxonomies: tags and series.
+
+Then we will write some better looking indexes to create a nice display of the tutorials.
 <!--more-->
 
 # Improving the default templates
