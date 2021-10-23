@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorials on My WWW</title>
+    <link>jurjen.dev/tutorial/</link>
+    <description>Recent content in Tutorials on My WWW</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Oct 2021 15:54:14 +0200</lastBuildDate><atom:link href="jurjen.dev/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sass</title>
+      <link>jurjen.dev/tutorial/hugo/sass/</link>
+      <pubDate>Fri, 22 Oct 2021 15:54:14 +0200</pubDate>
+      
+      <guid>jurjen.dev/tutorial/hugo/sass/</guid>
+      <description>Back to learning CSS, SASS edition I thought all stylesheet examples looked convoluted and confusing (they are). So I decided to switch to using a CSS framework (Bootstrap, it&amp;rsquo;s quite nice). However, I came across SASS and it just made CSS much easier to use AND understand. Having a bit of structure makes all the difference for comprehension and readability.
+So I decided to not use bootstrap for this site, but use SASS stylesheets instead.</description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>jurjen.dev/tutorial/hugo/hugo/</link>
+      <pubDate>Fri, 22 Oct 2021 11:41:22 +0200</pubDate>
+      
+      <guid>jurjen.dev/tutorial/hugo/hugo/</guid>
+      <description>Building websites with Markdown instead of HTML When you write more than a few pages of HTML, you quickly get tired of the nonsense. Which (among other reasons) is why Markdown was build.
+To convert a collection of markdown files into a functional website and do extra processing to build your website code, you can use a site generator.
+The most famous of these (because it was the &amp;lsquo;first&amp;rsquo;) is Jekyll.</description>
+    </item>
+    
+    <item>
+      <title>Start</title>
+      <link>jurjen.dev/tutorial/hugo/start/</link>
+      <pubDate>Fri, 22 Oct 2021 11:31:20 +0200</pubDate>
+      
+      <guid>jurjen.dev/tutorial/hugo/start/</guid>
+      <description>First post! Whenever I learn something new or interesting about development or the technologies I use, there will be a small post in my blog and/or on my wiki. Personally, I prefer a wiki, but then I wouldn&amp;rsquo;t get to practice making this cool blagging site.
+Follow along on my journey! In short, every major update on this site since the beginning will get a blog post. If you want to follow along on my process on getting started from 0% with Hugo and website building in general, just follow the blogs from beginning to end.</description>
+    </item>
+    
+  </channel>
+</rss>

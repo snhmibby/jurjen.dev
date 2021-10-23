@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+	<link rel="stylesheet" href="/vendor/bootstrap-icons-1.6.1/bootstrap-icons.css">
+
+	
+	<script src="/vendor/jquery-3.6.0.js"></script>
+
+	
+	
+	
+
+	
+	<link rel="stylesheet" href="/jurjen.dev/css/site.min.css"}}>
+
+
+	<title>
+		My WWW
+		 | Hugo 
+	</title>
+</head>
+<body>
+<nav id="navigation">
+	<div class="nav-icon-bar">
+		<a href="#" onclick='$(".nav-menu").toggleClass("toggle-visible")'><i class="bi bi-list"></i></a>
+		<a href="/"><i class="bi bi-house-fill"></i></a>
+		<a href="https://wiki.jurjen.dev"><i class="bi bi-stickies-fill"></i></a>
+		<a href="https://github.com/snhmibby"><i class="bi bi-github"></i></a>
+	</div>
+	<div class="nav-menu">
+		<a href="/">Home</a>
+		
+		
+			<a  href="jurjen.dev/about/"
+				>
+			About
+			</a>
+		
+			<a  href="jurjen.dev/tutorial/"
+				>
+			Tutorials
+			</a>
+		
+
+		<a href="https://wiki.jurjen.dev">Wiki</a>
+		<a href="https://github.com/snhmibby">Github</a>
+	</div>
+</nav>
+<div id="content">
+<main>
+	<article>
+		<h1 id="building-websites-with-markdown-instead-of-html">Building websites with Markdown instead of HTML</h1>
+<p>When you write more than a few pages of <a href="http://html.com">HTML</a>, you quickly get tired of the nonsense.
+Which (among other reasons) is why <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> was build.</p>
+<p>To convert a collection of markdown files into a functional website and do
+extra processing to build your website code, you can use a <a href="https://en.wikipedia.org/wiki/Web_template_system#Static_site_generators">site
+generator</a>.</p>
+<p>The most famous of these (because it was the &lsquo;first&rsquo;) is
+<a href="http://jeyllrb.com">Jekyll</a>.  I gave it a spin, but because Go is my new
+favourite programming language (comes with a nice <a href="https://pkg.go.dev/text/template">template
+library</a>), I started to look for something
+written in it.</p>
+<h1 id="enter-hugo">Enter Hugo</h1>
+<p><a href="http://gohugo.io">Hugo</a> then became the natural choice. It has many nice
+features, it&rsquo;s fast and it&rsquo;s written in Go! What more could I want?</p>
+<p>So basically Hugo creates 2 views by default, one is a &lsquo;folder view&rsquo; (list) and
+the other is a single page view.  They are created by the templates list.html
+and single.html, which are in turn created by the baseof.html template.  A list
+view will use markdown file &lsquo;content/foo/_index.md&rsquo;, a page view will use
+&lsquo;content/foo/bar.md&rsquo;.</p>
+<p>Each theme will/should have a Readme on what kinds of content you should add.
+You add new content with the command &lsquo;hugo new folder/file.md&rsquo;, this adds the
+basic preamble with settings that the system needs.  After that you can edit
+the file content/folder/file.md.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>Unfortunately, it was a little complicated to get started. The
+<a href="https://gohugo.io/documentation/">documentation</a> does a good job of explaining
+the basic functions, but finding a decent introduction for beginners was
+difficult for me the first hour.</p>
+<p>The only beginner tutorials I could find just say &ldquo;Install Hugo,
+select a theme and pump out Markdown files&rdquo;. Which is great!
+Because that means it&rsquo;s easy to make a nice site for just about
+anybody. However, how to learn Hugo well enough to produce a custom site?</p>
+<p><a href="https://levelup.gitconnected.com/a-quick-tutorial-on-hugo-templates-creating-your-theme-a4102b42a85f">Here</a>
+is a very nice tutorial to get you started in writing your first templates.
+After this one the <a href="https://gohugo.io/documentation/">official documentation</a>
+should start to make sense! Enjoy!</p>
+<h1 id="follow-along">Follow along!</h1>
+<p>From now on, every blog post in this series will document some work I did on this site,
+some CSS trick I learned, and how I used Hugo to improve the functionality of this site step by step. Along the way to we will learn HTML, CSS, Javascript and modern web programming practices!</p>
+<ol>
+<li>Follow the tutorial above! It explains quite a lot.</li>
+<li>Create a new hugo site.</li>
+<li>Create the following extremely basic templates, this should get you started with Hugo.</li>
+</ol>
+<p>layouts/_defaults/baseof.html:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+{{- partial &#34;head.html&#34; . -}}
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    {{- partial &#34;header.html&#34; . -}}
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span>&gt;
+        {{- block &#34;main&#34; . }}{{- end }}
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    {{- partial &#34;footer.html&#34; . -}}
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>layouts/_default/list.html:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">{{ define &#34;main&#34; }}
+&lt;<span style="color:#f92672">main</span>&gt;
+ &lt;<span style="color:#f92672">article</span>&gt;
+     {{ .Content }}
+ &lt;/<span style="color:#f92672">article</span>&gt;
+ &lt;<span style="color:#f92672">div</span>&gt;
+     {{ range .Pages }}
+         &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Permalink }}&#34;</span>&gt; {{ .Title }}&lt;/<span style="color:#f92672">a</span>&gt;
+     {{ end }}
+ &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">main</span>&gt;
+{{ end }}
+</code></pre></div><p>layouts/defaults/single.html:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">{{ define &#34;main&#34; }}
+&lt;<span style="color:#f92672">main</span>&gt;
+ &lt;<span style="color:#f92672">article</span>&gt;
+     {{ .Content }}
+ &lt;/<span style="color:#f92672">article</span>&gt;
+&lt;/<span style="color:#f92672">main</span>&gt;
+{{ end }}
+</code></pre></div><p>layouts/partials/head.html:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">head</span>&gt;
+ &lt;<span style="color:#f92672">title</span>&gt;
+     {{ .Site.Title }}
+     {{ if not .IsHome }} | {{ .Title }} {{ end }}
+ &lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+</code></pre></div><ol start="4">
+<li><code>hugo add</code> some different files and categories and see if your new site is working! Happy hacking!</li>
+</ol>
+
+	</article>
+</main>
+
+    </div></body>
+
+</html>
