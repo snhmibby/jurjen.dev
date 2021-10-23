@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>jurjen.dev/tutorial/hugo/sass/</loc>
-    <lastmod>2021-10-22T15:54:14+02:00</lastmod>
+    <loc>jurjen.dev/tutorial/hugo/templates/</loc>
+    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
   </url>
   
   <url>
     <loc>jurjen.dev/tutorial/</loc>
+    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>jurjen.dev/tutorial/hugo/navbars-and-sass/</loc>
     <lastmod>2021-10-22T15:54:14+02:00</lastmod>
   </url>
   
@@ -18,12 +23,12 @@
   </url>
   
   <url>
-    <loc>jurjen.dev/tutorial/hugo/hugo/</loc>
+    <loc>jurjen.dev/tutorial/hugo/getting-started/</loc>
     <lastmod>2021-10-22T11:41:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>jurjen.dev/tutorial/hugo/start/</loc>
+    <loc>jurjen.dev/tutorial/hugo/introduction/</loc>
     <lastmod>2021-10-22T11:31:20+02:00</lastmod>
   </url>
   
