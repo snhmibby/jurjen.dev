@@ -1,2 +1,3 @@
-# Boot Hugo
-A simple hugo site that includes bootstrap ready to go!
+# My new website
+
+I made a blog using Hugo about learning web development using Hugo.
