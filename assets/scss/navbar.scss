@@ -1,5 +1,10 @@
-/* Navigation bar, use nested lists for menus
- * Should use media queries for responsive behaviour
+/* Navigation bar, structure is:
+ * <nav>
+ *   <div class="nav-icon-bar"/>
+ *   <div class="nav-menu">
+ *   	<a>menu link
+ *   	...
+ * Support for small screens through flexbox and media queries
  */
 
 nav {
