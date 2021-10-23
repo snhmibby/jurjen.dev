@@ -2,44 +2,27 @@
 title: "Getting Started!"
 date: 2021-10-22T11:41:22+02:00
 draft: false
+series: "Hugo"
+weight: 2
+tags: ["Hugo", "Markdown", "HTML", "Templates"]
 ---
 
-# Building websites with Markdown instead of HTML
+# Building websites with Markdown content
 
 When you write more than a few pages of [HTML](http://html.com), you quickly get tired of the nonsense.
-Which (among other reasons) is why [Markdown](https://en.wikipedia.org/wiki/Markdown) was build.
+Which is why [Markdown](https://en.wikipedia.org/wiki/Markdown) was build.
+We will look at the [Hugo](http://gohugo.io) [site generator](https://en.wikipedia.org/wiki/Web_template_system#Static_site_generators) to fold markdown articles into a functional website.
+<!--more-->
 
-To convert a collection of markdown files into a functional website and do
-extra processing to build your website code, you can use a [site
-generator](https://en.wikipedia.org/wiki/Web_template_system#Static_site_generators).
+# Hugo
 
-The most famous of these (because it was the 'first') is
-[Jekyll](http://jeyllrb.com).  I gave it a spin, but because Go is my new
-favourite programming language (comes with a nice [template
-library](https://pkg.go.dev/text/template)), I started to look for something
-written in it.
-
-# Enter Hugo
-
-[Hugo](http://gohugo.io) then became the natural choice. It has many nice
-features, it's fast and it's written in Go! What more could I want?
-
-So basically Hugo creates 2 views by default, one is a 'folder view' (list) and
-the other is a single page view.  They are created by the templates list.html
-and single.html, which are in turn created by the baseof.html template.  A list
-view will use markdown file 'content/foo/_index.md', a page view will use
-'content/foo/bar.md'.
-
-Each theme will/should have a Readme on what kinds of content you should add.
-You add new content with the command 'hugo new folder/file.md', this adds the
-basic preamble with settings that the system needs.  After that you can edit
-the file content/folder/file.md.
+[Hugo](http://gohugo.io) is a program that takes a collection of markdown files and turns it into a nice website. It has many nice features, it's fast and it's written in
+Go! What more could you want?
 
 ## Getting started
-Unfortunately, it was a little complicated to get started. The
-[documentation](https://gohugo.io/documentation/) does a good job of explaining
-the basic functions, but finding a decent introduction for beginners was
-difficult for me the first hour.
+Unfortunately, it's a little more complicated than it needs be to get up to speed
+with Hugo. The [documentation](https://gohugo.io/documentation/) does a good
+job of explaining the functions, but where to start?
 
 The only beginner tutorials I could find just say "Install Hugo,
 select a theme and pump out Markdown files". Which is great!
@@ -47,16 +30,18 @@ Because that means it's easy to make a nice site for just about
 anybody. However, how to learn Hugo well enough to produce a custom site?
 
 [Here](https://levelup.gitconnected.com/a-quick-tutorial-on-hugo-templates-creating-your-theme-a4102b42a85f)
-is a very nice tutorial to get you started in writing your first templates.
+is a nice tutorial to get you started in writing your first templates.
 After this one the [official documentation](https://gohugo.io/documentation/)
-should start to make sense! Enjoy!
+will slowly start to make sense!
 
-# Follow along!
-From now on, every blog post in this series will document some work I did on this site,
-some CSS trick I learned, and how I used Hugo to improve the functionality of this site step by step. Along the way to we will learn HTML, CSS, Javascript and modern web programming practices!
-1. Follow the tutorial above! It explains quite a lot.
-2. Create a new hugo site.
-3. Create the following extremely basic templates, this should get you started with Hugo.
+## Hugo basics in 10 seconds
+Hugo takes the collection of markdown in the content/ directory, applies the
+HTML templates in the layout/ directory to produce a site in the public/
+directory.
+
+### Creating a barebones Hugo website
+1. Create a new hugo site (```hugo new site my-cool-website```).
+2. Create the following basic templates.
 
 layouts/_defaults/baseof.html:
 ```HTML
@@ -109,4 +94,11 @@ layouts/_defaults/baseof.html:
 </head>
    ```
 
-4. ```hugo add``` some different files and categories and see if your new site is working! Happy hacking!
+3. ```hugo add foo.md``` adds markdown file foo in the content directory.
+4. ```hugo serve -D``` in the top directory will start the development server.
+5. Start a server in the background and point your browser to the location it
+   tells you. Experiment with adding and editing different files and directories and see
+   what happens!
+6. Happy hacking!
+
+Once you are happy with your site, stop the development server and run the 'hugo' program without arguments in the site directory. This will create your site in the public/ directory, which you can then upload to a web server.

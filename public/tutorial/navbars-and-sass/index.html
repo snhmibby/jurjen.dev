@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+	<link rel="stylesheet" href="/vendor/bootstrap-icons-1.6.1/bootstrap-icons.css">
+
+	
+	<script src="/vendor/jquery-3.6.0.js"></script>
+
+	
+	
+	
+
+	
+	<link rel="stylesheet" href="/css/site.min.css">
+
+
+	<title>
+		jurjen.dev
+		 | Navigation 
+	</title>
+</head>
+<body>
+<nav id="navigation">
+
+	<div class="nav-icon-bar">
+		<a href="#" onclick='$("#main-menu").toggleClass("toggle-visible")'><i class="bi bi-list"></i></a>
+		<a href="/"><i class="bi bi-house-fill"></i></a>
+		<a href="https://wiki.jurjen.dev"><i class="bi bi-stickies-fill"></i></a>
+		<a href="https://github.com/snhmibby"><i class="bi bi-github"></i></a>
+	</div>
+
+	<div id="main-menu" class="nav-menu">
+		<a href="/">Home</a>
+		
+		
+			<a  href="/about/"
+				>
+			About
+			</a>
+		
+			<a  href="/tutorial/"
+				>
+			Tutorials
+			</a>
+		
+
+		<a href="https://wiki.jurjen.dev">Wiki</a>
+		<a href="https://github.com/snhmibby">Github</a>
+	</div>
+</nav>
+<div id="content">
+
+
+<article>
+	<h1 id="adding-a-navigation-bar-with-custom-css">Adding a navigation bar with custom CSS</h1>
+<p>In this tutorial, we will create a simple navigation bar that works for both
+mobile and desktop browsers. We will look into Hugos Pipelines and do our first
+bit of Javascript programming.</p>
+<h2 id="learning-css-sass-edition">Learning CSS, SASS edition</h2>
+<p>I thought all stylesheet examples looked convoluted and confusing (they are).
+So I decided to switch to using a CSS framework (<a href="https://getbootstrap.com/">Bootstrap</a>,
+it&rsquo;s quite nice).  However, I came across
+SASS and it just made CSS much easier to use AND understand. Having a bit of
+structure makes all the difference for comprehension and readability.</p>
+<p>So I decided to not use bootstrap for this site, but use SASS stylesheets instead.
+Conveniently, Hugo has excellent support for them.</p>
+<h2 id="set-up-a-sass-pipeline-with-hugo">Set up a SASS pipeline with Hugo</h2>
+<p>In partial/head.html, you will want something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!-- Custom CSS --&gt;</span>
+{{ $site := resources.Get &#34;scss/site.scss&#34; | toCSS }}
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{$site.RelPermalink}}&#34;</span>&gt;
+</code></pre></div><p>This is called a <a href="">Pipeline</a>, they string <a href="">template functions</a> together. This particular one will look up &lsquo;assets/scss/site.scss&rsquo; call a SASS &lsquo;compiler&rsquo; on it (which produces a CSS object) and then later we use the .RelPermalink method on this object, which tells Hugo to create the css object in our site and link to it.</p>
+<p>I found this <a href="https://github.com/spech66/hugo-best-practices#css-and-javascript">here</a>.
+It&rsquo;s a collection of Hugo tips!</p>
+<p>With this snippet in place, you can just edit your scss files and Hugo (if
+the development server is running) will recompile them and automatically
+update the page you&rsquo;re viewing, which makes trying out different styles and
+options as easy as editing your scss file and saving it!</p>
+<h2 id="adding-a-navigation-bar-to-the-website">Adding a navigation bar to the website</h2>
+<p>Now that I got rid of the Bootstrap CSS library, I cannot use their
+navigation bar anymore&hellip; Time to make one myself!  Since we live in 2021,
+and everybody has mobiles and smaller screens, the navigation bar should
+adapt to that. It does so by using a <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#examples">flex container</a>, and switching it from row mode to column mode through a
+<a href="https://css-tricks.com/a-complete-guide-to-css-media-queries/">CSS media query</a>.</p>
+<p>Also, just for kicks, we will add a cool icon bar, with a menu icon and add
+[Javascript](jquery.com/toggleClass documentation link here TODO) code to open and close our menu to provide some fun interaction :D</p>
+<p>This is the HTML template:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navigation&#34;</span>&gt;
+	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-icon-bar&#34;</span>&gt;
+		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;$(&#34;#main-menu&#34;).toggleClass(&#34;toggle-visible&#34;)&#39;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bi bi-list&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bi bi-house-fill&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://wiki.jurjen.dev&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bi bi-stickies-fill&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/snhmibby&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bi bi-github&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+	&lt;/<span style="color:#f92672">div</span>&gt;
+
+	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main-menu&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-menu&#34;</span>&gt;
+		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span>&gt;Home&lt;/<span style="color:#f92672">a</span>&gt;
+		{{ $currentPage := . }}
+		{{ range .Site.Menus.main }}
+			&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .URL }}&#34;</span>
+			<span style="color:#960050;background-color:#1e0010">{{</span> <span style="color:#a6e22e">if</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">currentPage</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">IsMenuCurrent</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">main</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#960050;background-color:#1e0010">}}</span>
+				<span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;active&#34;</span>
+			<span style="color:#960050;background-color:#1e0010">{{</span> <span style="color:#a6e22e">end</span> <span style="color:#960050;background-color:#1e0010">}}</span>&gt;
+			{{ .Name }}
+			&lt;/<span style="color:#f92672">a</span>&gt;
+		{{ end }}
+
+		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://wiki.jurjen.dev&#34;</span>&gt;Wiki&lt;/<span style="color:#f92672">a</span>&gt;
+		&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/snhmibby&#34;</span>&gt;Github&lt;/<span style="color:#f92672">a</span>&gt;
+	&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">nav</span>&gt;
+</code></pre></div><p>The CSS looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SCSS" data-lang="SCSS"><span style="color:#75715e">/* Navigation bar, structure is:
+</span><span style="color:#75715e"> * &lt;nav&gt;
+</span><span style="color:#75715e"> *   &lt;div class=&#34;nav-icon-bar&#34;/&gt;
+</span><span style="color:#75715e"> *   &lt;div class=&#34;nav-menu&#34;&gt;
+</span><span style="color:#75715e"> *   	&lt;a&gt;menu link
+</span><span style="color:#75715e"> *   	...
+</span><span style="color:#75715e"> * Support for small screens through flexbox and media queries
+</span><span style="color:#75715e"> */</span>
+
+<span style="color:#f92672">nav</span> {
+	<span style="color:#f92672">background-color</span><span style="color:#a6e22e">:</span> #333;
+
+	<span style="color:#f92672">a</span> {
+		<span style="color:#f92672">display</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">block</span>;
+		<span style="color:#f92672">padding</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">5px</span>;
+		<span style="color:#f92672">color</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">white</span>;
+		<span style="color:#f92672">text-decoration</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">none</span>;
+		<span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">:hover</span> {
+			<span style="color:#f92672">background-color</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">darkred</span>;
+		}
+	}
+
+	<span style="color:#a6e22e">.nav-icon-bar</span><span style="color:#f92672">,</span>
+	<span style="color:#a6e22e">.nav-menu</span> {
+		<span style="color:#f92672">display</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">flex</span>;
+	}
+
+	<span style="color:#a6e22e">.toggle-visible</span> {
+		<span style="color:#f92672">display</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">none</span>;
+	}
+
+	<span style="color:#66d9ef">@media</span> (<span style="color:#66d9ef">max-width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">350</span><span style="color:#66d9ef">px</span>) {
+		<span style="color:#a6e22e">.nav-menu</span> {
+			<span style="color:#f92672">flex-direction</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">column</span>;
+		}
+	}
+}
+</code></pre></div><h1 id="follow-along">Follow along!</h1>
+<ol start="0">
+<li>The example uses the <a href="https://jquery.com/download/">jQuery</a> library and <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>. Install both in the static/ directory (or link to a cdn)
+and update the head.html template so that they are automatically added on all our pages.</li>
+<li><a href="https://www.w3schools.com/css/css_text_align.asp">Center the text</a> in the links so column mode looks better.</li>
+<li>Hugo has support for <a href="https://gohugo.io/templates/menu-templates/">menu generation</a>. Set <code>sectionPagesMenu=&quot;main&quot;</code> in config.toml</li>
+<li>Create <code>partials/navbar.html</code> and add it in the default baseof.html template in the HTML body.</li>
+<li>Create <code>assets/navbar.scss</code>, include &lsquo;navbar.scss&rsquo; in &lsquo;site.scss&rsquo;.</li>
+</ol>
+<p>Our navigation bar should be added on all pages now! Pretty cool!</p>
+</article>
+
+
+
+    </div></body>
+
+</html>

@@ -2,3 +2,7 @@ baseURL = "https://jurjen.dev"
 languageCode = "en-us"
 title = "jurjen.dev"
 sectionPagesMenu = "main"
+
+[taxonomies]
+	tag = "tags"
+	series = "series"

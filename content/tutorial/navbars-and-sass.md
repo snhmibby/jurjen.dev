@@ -2,9 +2,18 @@
 title: "Navigation"
 date: 2021-10-22T15:54:14+02:00
 draft: false
+series: "Hugo"
+weight: 3
+tags: ["Hugo", "CSS", "jQuery", "Javascript"]
 ---
 
-# Back to learning CSS, SASS edition
+# Adding a navigation bar with custom CSS
+In this tutorial, we will create a simple navigation bar that works for both
+mobile and desktop browsers. We will look into Hugos Pipelines and do our first
+bit of Javascript programming.
+<!--more-->
+
+## Learning CSS, SASS edition
 
 I thought all stylesheet examples looked convoluted and confusing (they are).
 So I decided to switch to using a CSS framework ([Bootstrap](https://getbootstrap.com/),
@@ -15,38 +24,35 @@ structure makes all the difference for comprehension and readability.
 So I decided to not use bootstrap for this site, but use SASS stylesheets instead.
 Conveniently, Hugo has excellent support for them.
 
-## Set up SASS stylesheets with Hugo
+## Set up a SASS pipeline with Hugo
 
 In partial/head.html, you will want something like this:
 ```HTML
 <!-- Custom CSS -->
 {{ $site := resources.Get "scss/site.scss" | toCSS }}
-{{ $css := $site | minify | fingerprint }}
-<link rel="stylesheet" href="{{$css.RelPermalink}}" integrity="{{$css.Data.Integrity}}">
+<link rel="stylesheet" href="{{$site.RelPermalink}}">
 ```
-See also: [Hugo best practices](https://github.com/spech66/hugo-best-practices#css-and-javascript) for more tips!
+This is called a [Pipeline](), they string [template functions]() together. This particular one will look up 'assets/scss/site.scss' call a SASS 'compiler' on it (which produces a CSS object) and then later we use the .RelPermalink method on this object, which tells Hugo to create the css object in our site and link to it.
 
-Now you can just edit your scss files, include them in
-<code>assets/scss/site.scss</code> and Hugo (if the development server is
-running) will recompile them and update the page you're viewing, which makes
-trying out different styles and options until it's "just right" an extremely
-pleasant experience.
+I found this [here](https://github.com/spech66/hugo-best-practices#css-and-javascript).
+It's a collection of Hugo tips!
+
+With this snippet in place, you can just edit your scss files and Hugo (if
+the development server is running) will recompile them and automatically
+update the page you're viewing, which makes trying out different styles and
+options as easy as editing your scss file and saving it!
 
 ## Adding a navigation bar to the website
 Now that I got rid of the Bootstrap CSS library, I cannot use their
 navigation bar anymore... Time to make one myself!  Since we live in 2021,
 and everybody has mobiles and smaller screens, the navigation bar should
-adapt to that.  So, there will be 1 button that can hide and open the
-navigation bar (the typical 'hamburger' icon. This one comes from [Bootstrap
-Icons](https://icons.getbootstrap.com/#install).  The CSS will use [media
-queries](https://css-tricks.com/a-complete-guide-to-css-media-queries/) to
-switch a [flex
-container](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#examples)
-to a column layout when the screen gets too small.
+adapt to that. It does so by using a [flex container](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#examples), and switching it from row mode to column mode through a
+[CSS media query](https://css-tricks.com/a-complete-guide-to-css-media-queries/).
 
-It should be simple enough... Here is the HTML template for the navigation bar:
+Also, just for kicks, we will add a cool icon bar, with a menu icon and add
+[Javascript](jquery.com/toggleClass documentation link here TODO) code to open and close our menu to provide some fun interaction :D
 
-layouts/partials/navbar.html:
+This is the HTML template:
 ```HTML
 <nav id="navigation">
 	<div class="nav-icon-bar">
@@ -73,12 +79,8 @@ layouts/partials/navbar.html:
 	</div>
 </nav>
 ```
-Our hamburger icon uses the [JQuery](https://jquery.com/download/)
-[toggleClass](https://devdocs.io/jquery/toggleclass) function to switch the
-toggle-visible class. Which is defined in our css:
 
-
-assets/scss/navbar.scss
+The CSS looks like this:
 ```SCSS
 /* Navigation bar, structure is:
  * <nav>
@@ -118,13 +120,14 @@ nav {
 	}
 }
 ```
-Update ```assets/scss/site.scss``` to include ```navbar.scss```.
+
 
 # Follow along!
-0. [Center the text](https://www.w3schools.com/css/css_text_align.asp) in the links so column mode looks better.
-1. The example uses [jQuery](https://jquery.com/download/) and [Bootstrap Icons](https://icons.getbootstrap.com/). Install both in the static/ directory (or link to a cdn)
+0. The example uses the [jQuery](https://jquery.com/download/) library and [Bootstrap Icons](https://icons.getbootstrap.com/). Install both in the static/ directory (or link to a cdn)
    and update the head.html template so that they are automatically added on all our pages.
-2. Hugo has support for [menu generation](https://gohugo.io/templates/menu-templates/). Set ```sectionPagesMenu="main"``` in
-   config.toml, then create ```partial/navbar.html``` and loop over the
-   .Site.Menus.main object to create our menu links.
-   Add ```navbar.html``` in the default templates so it is included in the body on all pages.
+1. [Center the text](https://www.w3schools.com/css/css_text_align.asp) in the links so column mode looks better.
+2. Hugo has support for [menu generation](https://gohugo.io/templates/menu-templates/). Set ```sectionPagesMenu="main"``` in config.toml
+3. Create ```partials/navbar.html``` and add it in the default baseof.html template in the HTML body.
+4. Create ```assets/navbar.scss```, include 'navbar.scss' in 'site.scss'.
+
+Our navigation bar should be added on all pages now! Pretty cool!

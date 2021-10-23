@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jurjen.dev/tutorial/introduction/</loc>
+    <lastmod>2021-10-21T23:13:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tutorial/getting-started/</loc>
+    <lastmod>2021-10-22T11:41:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tutorial/navbars-and-sass/</loc>
+    <lastmod>2021-10-22T15:54:14+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jurjen.dev/tags/css/</loc>
     <lastmod>2021-10-23T03:26:20+02:00</lastmod>
   </url>
@@ -13,17 +28,27 @@
   </url>
   
   <url>
+    <loc>https://jurjen.dev/series/hugo/</loc>
+    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tutorial/tags/</loc>
+    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/series/</loc>
+    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jurjen.dev/tags/</loc>
     <lastmod>2021-10-23T03:26:20+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://jurjen.dev/tags/tags/</loc>
-    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jurjen.dev/tutorial/tags/</loc>
     <lastmod>2021-10-23T03:26:20+02:00</lastmod>
   </url>
   
@@ -43,7 +68,12 @@
   </url>
   
   <url>
-    <loc>https://jurjen.dev/tutorial/navbars-and-sass/</loc>
+    <loc>https://jurjen.dev/tags/javascript/</loc>
+    <lastmod>2021-10-22T15:54:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tags/jquery/</loc>
     <lastmod>2021-10-22T15:54:14+02:00</lastmod>
   </url>
   
@@ -53,22 +83,18 @@
   </url>
   
   <url>
-    <loc>https://jurjen.dev/tutorial/getting-started/</loc>
+    <loc>https://jurjen.dev/tags/html/</loc>
     <lastmod>2021-10-22T11:41:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jurjen.dev/tutorial/introduction/</loc>
-    <lastmod>2021-10-22T11:31:20+02:00</lastmod>
+    <loc>https://jurjen.dev/tags/markdown/</loc>
+    <lastmod>2021-10-22T11:41:22+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://jurjen.dev/</loc>
     <lastmod>2021-10-21T23:13:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jurjen.dev/categories/</loc>
   </url>
   
 </urlset>
