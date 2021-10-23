@@ -1,5 +1,5 @@
 ---
-title: "Hugo"
+title: "Getting Started!"
 date: 2021-10-22T11:41:22+02:00
 draft: false
 ---
