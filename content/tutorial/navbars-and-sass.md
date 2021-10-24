@@ -53,8 +53,8 @@ and everybody has mobiles and smaller screens, the navigation bar should
 adapt to that. It does so by using a [flex container](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#examples), and switching it from row mode to column mode through a
 [CSS media query](https://css-tricks.com/a-complete-guide-to-css-media-queries/).
 
-Also, just for kicks, we will add a cool icon bar, with a menu icon and add
-[Javascript](jquery.com/toggleClass documentation link here TODO) code to open and close our menu to provide some fun interaction :D
+Also, we will add a cool icon bar, with a menu icon and add some
+[Javascript](https://api.jquery.com/toggleclass/) code to open and close our menu to provide some funny interaction.
 
 This is the HTML template:
 ```HTML
@@ -135,3 +135,6 @@ The CSS looks like this:
 4. Create ```assets/navbar.scss```, include 'navbar.scss' in 'site.scss'.
 
 Our navigation bar should be added on all pages now! Pretty cool!
+
+# Exercises:
+- Importing the entire jQuery library just because we want to use a single function is wasteful. Implement the toggleClass function using standard Javascript.

@@ -1,12 +1,11 @@
 {{ define "main" }}
 <main>
 	<article>
+		<h1>{{ .Title }}</h1>
 		{{ .Content }}
 	</article>
-	<ul>
-		{{ range .Pages }}
-			{{ partial "summary.html" . }}
-		{{ end }}
-	</ul>
+	{{ range .Pages }}
+		{{ .Render "summary" }}
+	{{ end }}
 </main>
 {{ end }}

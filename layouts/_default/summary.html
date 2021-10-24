@@ -1,0 +1,11 @@
+<section class="summary">
+	<h1><a href="{{.Permalink}}">{{.Title}}</a></h1>
+	<p>{{.Summary}}</p>
+	{{ if .Params.tags }}
+		<ul>
+			{{ range .Params.tags }}
+				<li class="summary-tag"><a href="/tags/{{.|urlize}}/">{{.}}</a></li>
+			{{ end }}
+		</ul>
+	{{ end }}
+</section>

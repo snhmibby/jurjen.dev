@@ -13,12 +13,16 @@
 		{{ end }}
 	{{ end }}
 	<nav class="nav-series">
-		{{ with index .Scratch.Values "prev"}}
-			<a class="nav-prev" href="{{- .Permalink -}}" rel="prev">&larr;</a>
-		{{ end }}
+		<div>
+			{{ with index .Scratch.Values "prev"}}
+				<a class="nav-prev" href="{{- .Permalink -}}" rel="prev">&larr;</a>
+			{{ end }}
+		</div>
 		<a class="nav-up" href="/series/{{.Params.series | urlize}}">{{.Params.series}} Track</a>
-		{{ with index .Scratch.Values "next"}}
-			<a class="nav-next" href="{{- .Permalink -}}" rel="next">&rarr;</a>
-		{{ end }}
+		<div>
+			{{ with index .Scratch.Values "next"}}
+				<a class="nav-next" href="{{- .Permalink -}}" rel="next">&rarr;</a>
+			{{ end }}
+		</div>
 	</nav>
 {{ end }}

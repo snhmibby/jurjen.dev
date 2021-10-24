@@ -3,11 +3,11 @@ title: "Ordering content"
 date: 2021-10-23T03:26:20+02:00
 draft: false
 series: "Hugo"
-tags: ["tags", "taxonomies", "Hugo", "CSS", "Templates"]
+tags: ["Tags", "Taxonomies", "Hugo", "CSS", "Templates"]
 ---
 
 Lets organize the tutorial collection using article tags and tutorial series.
-Along the way we discover Hugo's archetypes, front matter and 'taxonomies'.
+Along the way we discover Hugo's archetypes, front matter, 'taxonomies' and will create a simple card view with CSS.
 <!--more-->
 
 # Creating order: action plan.
@@ -33,7 +33,7 @@ archetypes/tutorial.md:
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: false
-series: ["Unsorted"]
+series: "Hugo"
 tags: []
 ---
 
@@ -75,10 +75,9 @@ series by comparing each item from first to last to our current page. When the
 current page is the 1st (index 0) or the last (index (len series) - 1), the
 corresponding scratch variable is not set.
 
-After there is a bit of template HTML generation where we check for the prev
-and next variables and generate the necessary links.
-
-I found this code [here](https://notestoself.dev/posts/hugo-taxonomy-term-next-prev-page-links/).
+I found this code
+[here](https://notestoself.dev/posts/hugo-taxonomy-term-next-prev-page-links/).
+Thank you!
 
 layout/partials/series_nav.html
 ```HTML
@@ -113,6 +112,7 @@ Our partial is included by layout/tutorial/single.html:
 {{ define "main" }}
 {{ partial "series_nav.html" . }}
 <article>
+	<h1>{{ .Title }}</h1>
 	{{ .Content }}
 </article>
 {{ partial "series_nav.html" . }}
@@ -137,22 +137,113 @@ navbar.scss:
 
 ### A nice list view
 Remember those summaries we made earlier?
-Now it is time to use them! Let's create a list.html layout specifically for
-the tutorial section, that will display each series as a list of summaries. 
+Now it is time to use them! First, we will make a [content view](https://gohugo.io/templates/views/) that provides a summary of a page.
 
-First, we create another partial that will create an HTML summary for a single page:
-
-layouts/partials/summary.html:
+layouts/_defaults/summary.html:
 ```HTML
 <section class="summary">
-	<h4 class="summary-title"><a href="{{.Permalink}}">{{.Title}}</a></h2>
-	<p class="summary-text">{{.Summary}}</p>
+	<h1><a href="{{.Permalink}}">{{.Title}}</a></h1>
+	<p>{{.Summary}}</p>
 	{{ if .Params.tags }}
-		whoop print tags here
+		<ul>
+			{{ range .Params.tags }}
+				<li class="summary-tag"><a href="/tags/{{.|urlize}}/">{{.}}</a></li>
+			{{ end }}
+		</ul>
 	{{ end }}
 </section>
 ```
 
-TODO!!
+And we will style our summary so our website doesn't look too boring.
 
-# Exercises
+assets/scss/summary-card.scss:
+```SCSS
+.summary {
+	margin: 5px;
+	padding: 10px;
+	background: lightgrey;
+	border-radius: 15px;
+	h1, p {
+		margin: 1px;
+	}
+	a {
+		text-decoration: none;
+	}
+	ul {
+		margin: 1px;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		list-style: none;
+	}
+	&:hover {
+		background: darkgrey;
+	}
+}
+```
+
+Don't forget to update 'assets/scss/site.scss' to include our card style.
+Check the website, our list looks a lot better already!
+
+Now to use the summary content view, we will update
+
+layouts/_default/list.html:
+```HTML
+{{ define "main" }}
+<main>
+	<article>
+		<h1>{{ .Title }}</h1>
+		{{ .Content }}
+	</article>
+	{{ range .Pages }}
+		{{ .Render "summary" }}
+	{{ end }}
+</main>
+{{ end }}
+```
+
+and create layouts/tutorial/list.html:
+```HTML
+{{ define "main" }}
+<main>
+	<h1>{{ .Title }}</h1>
+	{{ range $k,$v := .Site.Taxonomies.series }}
+		<section>
+			<h2>{{humanize $k}}</h2>
+			<div class="card-grid">
+				{{ range $v.Pages}}
+					{{ .Render "summary" }}
+				{{ end }}
+			</div>
+		</section>
+	{{ end }}
+</main>
+{{ end }}
+```
+
+and to wrap it up, we create a simple card grid that holds 1 article on
+small screens, 2 on medium screens and 3 on big screens.
+```SCSS
+.card-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	section {
+		max-width: 90%;
+	}
+
+	@media (min-width: 350px) {
+		section {
+			max-width: 45%;
+		}
+	}
+
+	@media (min-width: 700px) {
+		section {
+			max-width: 30%;
+		}
+	}
+}
+```

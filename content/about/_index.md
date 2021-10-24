@@ -4,13 +4,10 @@ date: 2021-10-22T15:47:44+02:00
 draft: false
 ---
 
-# About me & this site
-
 Recently I got fed up with my cranky boss at my old job so I quit.
-Now he can shuffle shit himself (literally - I worked as a stable boy!).
 
 I have given myself some free months to learn web development so I can
-hopefully land a cool hipster job in the near future. This is my first proper
+hopefully land a nice hipster job in the near future. This is my first proper
 self made website other than some crappy HTML pages and bunch of folders or a
 wiki. 
 

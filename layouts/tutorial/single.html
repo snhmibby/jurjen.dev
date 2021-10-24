@@ -1,7 +1,10 @@
 {{ define "main" }}
+{{ partial "series_nav.html" . }}
+<hr/>
 <article>
 	<h1>{{ .Title }}</h1>
 	{{ .Content }}
 </article>
+<hr/>
 {{ partial "series_nav.html" . }}
 {{ end }}

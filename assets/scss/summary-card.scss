@@ -1,0 +1,23 @@
+.summary {
+	margin: 5px;
+	padding: 10px;
+	background: lightgrey;
+	border-radius: 15px;
+	h1, p {
+		margin: 1px;
+	}
+	a {
+		text-decoration: none;
+	}
+	ul {
+		margin: 1px;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		list-style: none;
+	}
+	&:hover {
+		background: darkgrey;
+	}
+}

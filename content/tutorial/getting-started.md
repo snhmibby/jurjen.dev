@@ -17,10 +17,9 @@ We will look at the [Hugo](http://gohugo.io) [site generator](https://en.wikiped
 [Hugo](http://gohugo.io) is a program that takes a collection of markdown files and turns it into a nice website. It has many nice features, it's fast and it's written in
 Go! What more could you want?
 
-## Getting started
-Unfortunately, it's a little more complicated than it needs be to get up to speed
-with Hugo. The [documentation](https://gohugo.io/documentation/) does a good
-job of explaining the functions, but where to start?
+Unfortunately, it's a complicated to get up to speed with Hugo. The
+[documentation](https://gohugo.io/documentation/) does a good job of explaining
+the functions, but where to start?
 
 The only beginner tutorials I could find just say "Install Hugo,
 select a theme and pump out Markdown files". Which is great!
@@ -32,7 +31,7 @@ is a nice tutorial to get you started in writing your first templates.
 After this one the [official documentation](https://gohugo.io/documentation/)
 will slowly start to make sense!
 
-## Hugo basics in 10 seconds
+## The basics
 Hugo takes the collection of markdown in the content/ directory, applies the
 HTML templates in the layout/ directory to produce a site in the public/
 directory.
@@ -48,9 +47,9 @@ layouts/_defaults/baseof.html:
 {{- partial "head.html" . -}}
 
 <body>
-    <div id="content">
-        {{- block "main" . }}{{- end }}
-    </div>
+	<div id="content">
+		{{- block "main" . }}{{- end }}
+	</div>
 </body>
 </html>
    ```
@@ -60,6 +59,7 @@ layouts/_defaults/baseof.html:
 {{ define "main" }}
 <main>
 	<article>
+		<h1>{{ .Title }}</h1>
 		{{ .Content }}
 	</article>
 	<div>
@@ -76,6 +76,7 @@ layouts/_defaults/baseof.html:
 {{ define "main" }}
 <main>
 	<article>
+		<h1>{{ .Title }}</h1>
 		{{ .Content }}
 	</article>
 </main>
@@ -97,6 +98,10 @@ layouts/_defaults/baseof.html:
 5. Start a server in the background and point your browser to the location it
    tells you. Experiment with adding and editing different files and directories and see
    what happens!
-6. Happy hacking!
 
-Once you are happy with your site, stop the development server and run the 'hugo' program without arguments in the site directory. This will create your site in the public/ directory, which you can then upload to a web server.
+Once you are happy with your site, stop the development server
+and run the 'hugo' program without arguments in the site
+directory. This will create your site in the public/
+directory, which you can then upload to a web server.
+
+Happy hacking!

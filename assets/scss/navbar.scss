@@ -41,9 +41,18 @@
 .nav-series {
 	display: flex;
 	justify-content: center;
+	text-align: center;
 	a {
 		text-decoration: none;
-		display: block;
-		padding: 5px;
+	}
+	&:first-child {
+		display: flex;
+		margin-left: auto;
+		align-items: end;
+	}
+	&:last-child {
+		display: flex;
+		margin-right: auto;
+		align-items: end;
 	}
 }
