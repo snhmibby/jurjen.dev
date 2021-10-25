@@ -1,8 +1,8 @@
 ---
 title: "Navigation"
-date: 2021-10-22T15:54:14+02:00
+date: 2021-10-22
 draft: false
-series: "Hugo"
+series: "My 1st Website"
 weight: 3
 tags: ["Hugo", "CSS", "jQuery", "Javascript"]
 ---
@@ -137,4 +137,4 @@ The CSS looks like this:
 Our navigation bar should be added on all pages now! Pretty cool!
 
 # Exercises:
-- Importing the entire jQuery library just because we want to use a single function is wasteful. Implement the toggleClass function using standard Javascript.
+- Importing the entire jQuery library just because we want to use a single function is wasteful. Implement the toggleClass function using [standard Javascript functions](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).

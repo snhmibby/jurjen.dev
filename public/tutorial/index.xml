@@ -6,22 +6,22 @@
     <description>Recent content in Tutorials on jurjen.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Oct 2021 03:26:20 +0200</lastBuildDate><atom:link href="https://jurjen.dev/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Oct 2021 00:29:33 +0200</lastBuildDate><atom:link href="https://jurjen.dev/tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction</title>
       <link>https://jurjen.dev/tutorial/introduction/</link>
-      <pubDate>Thu, 21 Oct 2021 23:13:20 +0200</pubDate>
+      <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jurjen.dev/tutorial/introduction/</guid>
       <description>&lt;p&gt;In this series we will explore the basics of HTML, Javascript, CSS and web
-development by creating a cool tutorial website using the Hugo static website
-generator.&lt;/p&gt;</description>
+development by creating a cool tutorial website from the ground up using the
+Hugo static website generator.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Getting Started!</title>
       <link>https://jurjen.dev/tutorial/getting-started/</link>
-      <pubDate>Fri, 22 Oct 2021 11:41:22 +0200</pubDate>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jurjen.dev/tutorial/getting-started/</guid>
       <description>&lt;p&gt;When you write more than a few pages of &lt;a href=&#34;http://html.com&#34;&gt;HTML&lt;/a&gt;, you quickly get tired of the nonsense.
@@ -32,7 +32,7 @@ We will look at the &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; &lt;
     <item>
       <title>Navigation</title>
       <link>https://jurjen.dev/tutorial/navbars-and-sass/</link>
-      <pubDate>Fri, 22 Oct 2021 15:54:14 +0200</pubDate>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jurjen.dev/tutorial/navbars-and-sass/</guid>
       <description>&lt;p&gt;In this tutorial, we will create a simple navigation bar that works for both
@@ -43,11 +43,40 @@ bit of Javascript programming.&lt;/p&gt;</description>
     <item>
       <title>Ordering content</title>
       <link>https://jurjen.dev/tutorial/tags/</link>
-      <pubDate>Sat, 23 Oct 2021 03:26:20 +0200</pubDate>
+      <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jurjen.dev/tutorial/tags/</guid>
       <description>&lt;p&gt;Lets organize the tutorial collection using article tags and tutorial series.
-Along the way we discover Hugo&amp;rsquo;s archetypes, front matter and &amp;lsquo;taxonomies&amp;rsquo;.&lt;/p&gt;</description>
+Along the way we discover Hugo&amp;rsquo;s archetypes, front matter, &amp;lsquo;taxonomies&amp;rsquo; and will create a simple card view with CSS.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Collapsible</title>
+      <link>https://jurjen.dev/tutorial/accordion/</link>
+      <pubDate>Mon, 25 Oct 2021 01:18:48 +0200</pubDate>
+      
+      <guid>https://jurjen.dev/tutorial/accordion/</guid>
+      <description>&lt;p&gt;We will make a simple &amp;ldquo;collapsible&amp;rdquo; display.
+An collapsible is a component that can show or collapse its content so a page isn&amp;rsquo;t cluttered too much.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Finale</title>
+      <link>https://jurjen.dev/tutorial/finale/</link>
+      <pubDate>Sun, 24 Oct 2021 22:00:07 +0200</pubDate>
+      
+      <guid>https://jurjen.dev/tutorial/finale/</guid>
+      <description>&lt;p&gt;We look back at building our first website and look forward to what else we can learn!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bruteforcing sudokus</title>
+      <link>https://jurjen.dev/tutorial/bruteforce/</link>
+      <pubDate>Sun, 24 Oct 2021 02:02:06 +0200</pubDate>
+      
+      <guid>https://jurjen.dev/tutorial/bruteforce/</guid>
+      <description>&lt;p&gt;Bruteforcing is a simple programming technique for exploring the entire
+solution space until a correct solution is found.&lt;/p&gt;</description>
     </item>
     
   </channel>

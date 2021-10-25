@@ -1,45 +1,52 @@
 @import "navbar.scss";
 @import "summary-card.scss";
+@import "collapsible.scss";
 
 * {
 	box-sizing: border-box;
 }
 
+/* style basic elements */
 body {
 	margin: 0;
-	background: #f1f1f1;
+	padding: 0;
+	background: #cccccc;
 }
 
 hr {
 	border: 1px solid grey;
 }
 
-#content {
+h1, h2, h3, h4, h5 {
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+}
+
+/* style code blocks */
+pre code {
+	white-space: pre;
+	overflow-x: scroll;
+	display: block;
+	max-width: 100%;
+	padding: 5px;
+}
+
+
+/* main content div */
+body > #content {
+	position: relative;
 	padding: 10px;
 }
 
-code {
-	font-size: 10px;
+
+/* utility classes */
+.nopadding {
+	padding: 0;
+	margin: 0;
 }
 
-.card-grid {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-
-	section {
-		max-width: 90%;
-	}
-
-	@media (min-width: 350px) {
-		section {
-			max-width: 45%;
-		}
-	}
-
-	@media (min-width: 700px) {
-		section {
-			max-width: 30%;
-		}
-	}
+.toggle-visible {
+	display: none !important;
 }
+

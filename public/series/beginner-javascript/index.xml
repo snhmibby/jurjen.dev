@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Beginner Javascript on jurjen.dev</title>
+    <link>https://jurjen.dev/series/beginner-javascript/</link>
+    <description>Recent content in Beginner Javascript on jurjen.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Oct 2021 01:18:48 +0200</lastBuildDate><atom:link href="https://jurjen.dev/series/beginner-javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Collapsible</title>
+      <link>https://jurjen.dev/tutorial/accordion/</link>
+      <pubDate>Mon, 25 Oct 2021 01:18:48 +0200</pubDate>
+      
+      <guid>https://jurjen.dev/tutorial/accordion/</guid>
+      <description>&lt;p&gt;We will make a simple &amp;ldquo;collapsible&amp;rdquo; display.
+An collapsible is a component that can show or collapse its content so a page isn&amp;rsquo;t cluttered too much.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

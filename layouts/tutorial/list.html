@@ -3,7 +3,7 @@
 	<h1>{{ .Title }}</h1>
 	{{ range $k,$v := .Site.Taxonomies.series }}
 		<section>
-			<h2>{{humanize $k}}</h2>
+			<h2 class="collapsible">{{humanize $k}}</h2>
 			<div class="card-grid">
 				{{ range $v.Pages}}
 					{{ .Render "summary" }}

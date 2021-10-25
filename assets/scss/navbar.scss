@@ -27,10 +27,6 @@
 		display: flex;
 	}
 
-	.toggle-visible {
-		display: none;
-	}
-
 	@media (max-width: 350px) {
 		.nav-menu {
 			flex-direction: column;
@@ -44,15 +40,5 @@
 	text-align: center;
 	a {
 		text-decoration: none;
-	}
-	&:first-child {
-		display: flex;
-		margin-left: auto;
-		align-items: end;
-	}
-	&:last-child {
-		display: flex;
-		margin-right: auto;
-		align-items: end;
 	}
 }

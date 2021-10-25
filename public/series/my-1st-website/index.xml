@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Main on jurjen.dev</title>
-    <link>https://jurjen.dev/</link>
-    <description>Recent content in Main on jurjen.dev</description>
+    <title>My 1st Website on jurjen.dev</title>
+    <link>https://jurjen.dev/series/my-1st-website/</link>
+    <description>Recent content in My 1st Website on jurjen.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Oct 2021 23:13:20 +0200</lastBuildDate><atom:link href="https://jurjen.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Oct 2021 22:00:07 +0200</lastBuildDate><atom:link href="https://jurjen.dev/series/my-1st-website/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction</title>
       <link>https://jurjen.dev/tutorial/introduction/</link>
@@ -51,32 +51,12 @@ Along the way we discover Hugo&amp;rsquo;s archetypes, front matter, &amp;lsquo;
     </item>
     
     <item>
-      <title>Collapsible</title>
-      <link>https://jurjen.dev/tutorial/accordion/</link>
-      <pubDate>Mon, 25 Oct 2021 01:18:48 +0200</pubDate>
-      
-      <guid>https://jurjen.dev/tutorial/accordion/</guid>
-      <description>&lt;p&gt;We will make a simple &amp;ldquo;collapsible&amp;rdquo; display.
-An collapsible is a component that can show or collapse its content so a page isn&amp;rsquo;t cluttered too much.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Finale</title>
       <link>https://jurjen.dev/tutorial/finale/</link>
       <pubDate>Sun, 24 Oct 2021 22:00:07 +0200</pubDate>
       
       <guid>https://jurjen.dev/tutorial/finale/</guid>
       <description>&lt;p&gt;We look back at building our first website and look forward to what else we can learn!&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Bruteforcing sudokus</title>
-      <link>https://jurjen.dev/tutorial/bruteforce/</link>
-      <pubDate>Sun, 24 Oct 2021 02:02:06 +0200</pubDate>
-      
-      <guid>https://jurjen.dev/tutorial/bruteforce/</guid>
-      <description>&lt;p&gt;Bruteforcing is a simple programming technique for exploring the entire
-solution space until a correct solution is found.&lt;/p&gt;</description>
     </item>
     
   </channel>

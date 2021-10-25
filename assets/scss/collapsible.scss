@@ -1,0 +1,24 @@
+/* An collapsible can open and close content
+ * the next element in the DOM is the content
+ * So, a sample collapsible with 2 items would be:
+ *
+ * <h1 class="collapsible"> Click 4 more!</h1>
+ * <p> More 2 read...</p>
+ * <h1 class="collapsible"> Next chunk</h1>
+ * <p> Next chunk content</p>
+ */
+
+.collapsible {
+	display: block;
+	cursor: pointer;
+	border-bottom: 2px solid darkgrey;
+
+	&::before {
+		position: absolute;
+		content: "-";
+		left: 10px;
+	}
+	&.collapsible-closed::before {
+		content: "+";
+	}
+}

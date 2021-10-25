@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+
+	
+
+
+	
+	
+	<script src="/js/site.js"></script>
+
+	
+	
+	
+	
+	<link rel="stylesheet" href="/css/site.min.css">
+
+
+	<title>
+		jurjen.dev
+		 | Collapsible 
+	</title>
+</head>
+<body><nav class="nav-main">
+	<div class="nav-icon-bar">
+		<a href="#" onclick='toggleMenu()'><i class="bi bi-list"></i></a>
+		<a href="/"><i class="bi bi-house-fill"></i></a>
+		<a href="https://wiki.jurjen.dev"><i class="bi bi-stickies-fill"></i></a>
+		<a href="https://github.com/snhmibby"><i class="bi bi-github"></i></a>
+	</div>
+
+	<hr class="nopadding"/>
+	<div id="main-menu" class="nav-menu">
+		<a href="/">Home</a>
+		
+		
+			<a  href="/about/"
+				>
+			About
+			</a>
+		
+			<a  href="/tutorial/"
+				>
+			Tutorials
+			</a>
+		
+
+		<a href="https://wiki.jurjen.dev">Wiki</a>
+		<a href="https://github.com/snhmibby">Github</a>
+	</div>
+</nav>
+
+<div id="content">
+
+	
+	
+	
+	
+		
+			
+			
+		
+	
+	<nav class="nav-series">
+		<div>
+			
+		</div>
+		<a class="nav-up" href="/series/beginner-javascript">Beginner Javascript Track</a>
+		<div>
+			
+		</div>
+	</nav>
+
+
+<hr/>
+<article>
+	<h1>Collapsible</h1>
+	<p>We will make a simple &ldquo;collapsible&rdquo; display.
+An collapsible is a component that can show or collapse its content so a page isn&rsquo;t cluttered too much.</p>
+<p>Here we will create a functional, efficient and <strong>minimal</strong> example.</p>
+<p>We will make a class &ldquo;collapsible&rdquo;, with the implicit expectation that the next element in the document is its content.
+Clicking the collapsible will open or close its content.
+For visual feedback we add a + or - sign to the header.</p>
+<h3 id="javascript">Javascript</h3>
+<p>Let&rsquo;s start with javascript this time.  To open and close an collapsible open and
+closed we toggle the collapsible-closed class in the header and toggle-visible
+class in the content.</p>
+<p>To register click handlers, we create a simple initialization function that is
+called when the document is loaded.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">inits</span> <span style="color:#f92672">=</span> [] <span style="color:#75715e">//a list of functions to call at startup
+</span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+	<span style="color:#75715e">//execute all initialization functions
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>;
+	<span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">inits</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+		<span style="color:#a6e22e">inits</span>[<span style="color:#a6e22e">i</span>](); <span style="color:#75715e">//this is how you execute a function in an array
+</span><span style="color:#75715e"></span>	}
+};
+
+<span style="color:#75715e">/* simple collapsible implementation */</span>
+<span style="color:#a6e22e">inits</span>.<span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">function</span> () {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#e6db74">&#34;collapsible&#34;</span>);
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>;
+	<span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+		<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#66d9ef">function</span> () {
+			<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#e6db74">&#34;collapsible-closed&#34;</span>);
+			<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">nextElementSibling</span>;
+			<span style="color:#a6e22e">content</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#e6db74">&#39;toggle-visible&#39;</span>)
+		});
+	}
+});
+</code></pre></div><h3 id="css">CSS</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SCSS" data-lang="SCSS"><span style="color:#a6e22e">.collapsible</span> {
+	<span style="color:#f92672">display</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">block</span>;
+	<span style="color:#f92672">cursor</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">pointer</span>;
+	<span style="color:#f92672">border-bottom</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">2px</span> <span style="color:#f92672">solid</span> <span style="color:#f92672">darkgrey</span>;
+
+	<span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">::before</span> {
+		<span style="color:#f92672">position</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">absolute</span>;
+		<span style="color:#f92672">content</span><span style="color:#a6e22e">:</span> <span style="color:#e6db74">&#34;-&#34;</span>;
+		<span style="color:#f92672">left</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">10px</span>;
+	}
+	<span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">.collapsible-closed</span><span style="color:#a6e22e">::before</span> {
+		<span style="color:#f92672">content</span><span style="color:#a6e22e">:</span> <span style="color:#e6db74">&#34;+&#34;</span>;
+	}
+}
+
+<span style="color:#a6e22e">.toggle-visible</span> {
+	<span style="color:#f92672">display</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">none</span> <span style="color:#f92672">!</span><span style="color:#f92672">important</span>;
+}
+
+</code></pre></div><p>To play with it, see this <a href="https://codepen.io/jurjen-depurjen/pen/vYJgqrK">codepen</a></p>
+</article>
+<hr/>
+
+	
+	
+	
+	
+		
+			
+			
+		
+	
+	<nav class="nav-series">
+		<div>
+			
+		</div>
+		<a class="nav-up" href="/series/beginner-javascript">Beginner Javascript Track</a>
+		<div>
+			
+		</div>
+	</nav>
+
+
+
+    </div></body>
+
+</html>

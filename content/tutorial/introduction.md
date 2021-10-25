@@ -1,8 +1,8 @@
 ---
 title: Introduction
-date: 2021-10-21T23:13:20+02:00
+date: 2021-10-21
 draft: false
-series: "Hugo"
+series: "My 1st Website"
 weight: 1
 tags: []
 ---

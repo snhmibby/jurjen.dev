@@ -4,77 +4,127 @@
   
   <url>
     <loc>https://jurjen.dev/tutorial/introduction/</loc>
-    <lastmod>2021-10-21T23:13:20+02:00</lastmod>
+    <lastmod>2021-10-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jurjen.dev/tutorial/getting-started/</loc>
-    <lastmod>2021-10-22T11:41:22+02:00</lastmod>
+    <lastmod>2021-10-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jurjen.dev/tutorial/navbars-and-sass/</loc>
-    <lastmod>2021-10-22T15:54:14+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jurjen.dev/tags/css/</loc>
-    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jurjen.dev/tags/hugo/</loc>
-    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jurjen.dev/series/hugo/</loc>
-    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
+    <lastmod>2021-10-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jurjen.dev/tutorial/tags/</loc>
-    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
+    <lastmod>2021-10-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jurjen.dev/series/</loc>
-    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
+    <loc>https://jurjen.dev/series/beginner-javascript/</loc>
+    <lastmod>2021-10-25T01:18:48+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jurjen.dev/tags/</loc>
-    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
+    <loc>https://jurjen.dev/tutorial/accordion/</loc>
+    <lastmod>2021-10-25T01:18:48+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jurjen.dev/tags/tags/</loc>
-    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jurjen.dev/tags/taxonomies/</loc>
-    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jurjen.dev/tags/templates/</loc>
-    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jurjen.dev/tutorial/</loc>
-    <lastmod>2021-10-23T03:26:20+02:00</lastmod>
+    <loc>https://jurjen.dev/tags/css/</loc>
+    <lastmod>2021-10-25T01:18:48+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://jurjen.dev/tags/javascript/</loc>
-    <lastmod>2021-10-22T15:54:14+02:00</lastmod>
+    <lastmod>2021-10-25T01:18:48+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jurjen.dev/tags/jquery/</loc>
-    <lastmod>2021-10-22T15:54:14+02:00</lastmod>
+    <loc>https://jurjen.dev/tags/programming/</loc>
+    <lastmod>2021-10-25T01:18:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/series/</loc>
+    <lastmod>2021-10-25T01:18:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tags/</loc>
+    <lastmod>2021-10-25T01:18:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tags/web/</loc>
+    <lastmod>2021-10-25T01:18:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tutorial/finale/</loc>
+    <lastmod>2021-10-24T22:00:07+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/series/my-1st-website/</loc>
+    <lastmod>2021-10-24T22:00:07+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tags/algorithms/</loc>
+    <lastmod>2021-10-24T02:02:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tags/bit-twiddling/</loc>
+    <lastmod>2021-10-24T02:02:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tutorial/bruteforce/</loc>
+    <lastmod>2021-10-24T02:02:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tags/go/</loc>
+    <lastmod>2021-10-24T02:02:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tags/optimization/</loc>
+    <lastmod>2021-10-24T02:02:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/series/programming/</loc>
+    <lastmod>2021-10-24T02:02:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tutorial/</loc>
+    <lastmod>2021-10-24T00:29:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tags/hugo/</loc>
+    <lastmod>2021-10-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tags/tags/</loc>
+    <lastmod>2021-10-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tags/taxonomies/</loc>
+    <lastmod>2021-10-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tags/templates/</loc>
+    <lastmod>2021-10-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -84,12 +134,17 @@
   
   <url>
     <loc>https://jurjen.dev/tags/html/</loc>
-    <lastmod>2021-10-22T11:41:22+02:00</lastmod>
+    <lastmod>2021-10-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jurjen.dev/tags/jquery/</loc>
+    <lastmod>2021-10-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jurjen.dev/tags/markdown/</loc>
-    <lastmod>2021-10-22T11:41:22+02:00</lastmod>
+    <lastmod>2021-10-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>

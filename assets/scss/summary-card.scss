@@ -1,13 +1,37 @@
+.card-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	section {
+		max-width: 90%;
+	}
+
+	@media (min-width: 350px) {
+		section {
+			max-width: 45%;
+		}
+	}
+
+	@media (min-width: 700px) {
+		section {
+			max-width: 30%;
+		}
+	}
+}
+
 .summary {
 	margin: 5px;
 	padding: 10px;
-	background: lightgrey;
+	background: orange;
 	border-radius: 15px;
 	h1, p {
 		margin: 1px;
 	}
 	a {
 		text-decoration: none;
+		margin-left: 2px;
+		margin-right: 2px;
 	}
 	ul {
 		margin: 1px;
@@ -18,6 +42,6 @@
 		list-style: none;
 	}
 	&:hover {
-		background: darkgrey;
+		background: teal;
 	}
 }

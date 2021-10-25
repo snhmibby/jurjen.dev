@@ -4,15 +4,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	
-	<link rel="stylesheet" href="/vendor/bootstrap-icons-1.6.1/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
 
 	
-	<script src="/vendor/jquery-3.6.0.js"></script>
+
+
+	
+	
+	<script src="/js/site.js"></script>
 
 	
 	
 	
-
 	
 	<link rel="stylesheet" href="/css/site.min.css">
 
@@ -22,16 +25,15 @@
 		 | Getting Started! 
 	</title>
 </head>
-<body>
-<nav class="nav-main">
-
+<body><nav class="nav-main">
 	<div class="nav-icon-bar">
-		<a href="#" onclick='$("#main-menu").toggleClass("toggle-visible")'><i class="bi bi-list"></i></a>
+		<a href="#" onclick='toggleMenu()'><i class="bi bi-list"></i></a>
 		<a href="/"><i class="bi bi-house-fill"></i></a>
 		<a href="https://wiki.jurjen.dev"><i class="bi bi-stickies-fill"></i></a>
 		<a href="https://github.com/snhmibby"><i class="bi bi-github"></i></a>
 	</div>
 
+	<hr class="nopadding"/>
 	<div id="main-menu" class="nav-menu">
 		<a href="/">Home</a>
 		
@@ -51,7 +53,46 @@
 		<a href="https://github.com/snhmibby">Github</a>
 	</div>
 </nav>
+
 <div id="content">
+
+	
+	
+	
+	
+		
+	
+		
+			
+				
+			
+			
+				
+			
+		
+	
+		
+	
+		
+	
+		
+	
+	<nav class="nav-series">
+		<div>
+			
+				<a class="nav-prev" href="https://jurjen.dev/tutorial/introduction/" rel="prev">&larr;</a>
+			
+		</div>
+		<a class="nav-up" href="/series/my-1st-website">My 1st Website Track</a>
+		<div>
+			
+				<a class="nav-next" href="https://jurjen.dev/tutorial/navbars-and-sass/" rel="next">&rarr;</a>
+			
+		</div>
+	</nav>
+
+
+<hr/>
 <article>
 	<h1>Getting Started!</h1>
 	<p>When you write more than a few pages of <a href="http://html.com">HTML</a>, you quickly get tired of the nonsense.
@@ -60,10 +101,9 @@ We will look at the <a href="http://gohugo.io">Hugo</a> <a href="https://en.wiki
 <h1 id="hugo">Hugo</h1>
 <p><a href="http://gohugo.io">Hugo</a> is a program that takes a collection of markdown files and turns it into a nice website. It has many nice features, it&rsquo;s fast and it&rsquo;s written in
 Go! What more could you want?</p>
-<h2 id="getting-started">Getting started</h2>
-<p>Unfortunately, it&rsquo;s a little more complicated than it needs be to get up to speed
-with Hugo. The <a href="https://gohugo.io/documentation/">documentation</a> does a good
-job of explaining the functions, but where to start?</p>
+<p>Unfortunately, it&rsquo;s a complicated to get up to speed with Hugo. The
+<a href="https://gohugo.io/documentation/">documentation</a> does a good job of explaining
+the functions, but where to start?</p>
 <p>The only beginner tutorials I could find just say &ldquo;Install Hugo,
 select a theme and pump out Markdown files&rdquo;. Which is great!
 Because that means it&rsquo;s easy to make a nice site for just about
@@ -72,7 +112,7 @@ anybody. However, how to learn Hugo well enough to produce a custom site?</p>
 is a nice tutorial to get you started in writing your first templates.
 After this one the <a href="https://gohugo.io/documentation/">official documentation</a>
 will slowly start to make sense!</p>
-<h2 id="hugo-basics-in-10-seconds">Hugo basics in 10 seconds</h2>
+<h2 id="the-basics">The basics</h2>
 <p>Hugo takes the collection of markdown in the content/ directory, applies the
 HTML templates in the layout/ directory to produce a site in the public/
 directory.</p>
@@ -87,15 +127,16 @@ directory.</p>
 {{- partial &#34;head.html&#34; . -}}
 
 &lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span>&gt;
-        {{- block &#34;main&#34; . }}{{- end }}
-    &lt;/<span style="color:#f92672">div</span>&gt;
+	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span>&gt;
+		{{- block &#34;main&#34; . }}{{- end }}
+	&lt;/<span style="color:#f92672">div</span>&gt;
 &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><p>layouts/_default/list.html:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">{{ define &#34;main&#34; }}
 &lt;<span style="color:#f92672">main</span>&gt;
  &lt;<span style="color:#f92672">article</span>&gt;
+     &lt;<span style="color:#f92672">h1</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">h1</span>&gt;
      {{ .Content }}
  &lt;/<span style="color:#f92672">article</span>&gt;
  &lt;<span style="color:#f92672">div</span>&gt;
@@ -109,6 +150,7 @@ directory.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">{{ define &#34;main&#34; }}
 &lt;<span style="color:#f92672">main</span>&gt;
  &lt;<span style="color:#f92672">article</span>&gt;
+     &lt;<span style="color:#f92672">h1</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">h1</span>&gt;
      {{ .Content }}
  &lt;/<span style="color:#f92672">article</span>&gt;
 &lt;/<span style="color:#f92672">main</span>&gt;
@@ -126,10 +168,14 @@ directory.</p>
 <li>Start a server in the background and point your browser to the location it
 tells you. Experiment with adding and editing different files and directories and see
 what happens!</li>
-<li>Happy hacking!</li>
 </ol>
-<p>Once you are happy with your site, stop the development server and run the &lsquo;hugo&rsquo; program without arguments in the site directory. This will create your site in the public/ directory, which you can then upload to a web server.</p>
+<p>Once you are happy with your site, stop the development server
+and run the &lsquo;hugo&rsquo; program without arguments in the site
+directory. This will create your site in the public/
+directory, which you can then upload to a web server.</p>
+<p>Happy hacking!</p>
 </article>
+<hr/>
 
 	
 	
@@ -150,14 +196,20 @@ what happens!</li>
 	
 		
 	
+		
+	
 	<nav class="nav-series">
-		
-			<a class="nav-prev" href="https://jurjen.dev/tutorial/introduction/" rel="prev">&larr;</a>
-		
-		<a class="nav-up" href="/series/hugo">Hugo Track</a>
-		
-			<a class="nav-next" href="https://jurjen.dev/tutorial/navbars-and-sass/" rel="next">&rarr;</a>
-		
+		<div>
+			
+				<a class="nav-prev" href="https://jurjen.dev/tutorial/introduction/" rel="prev">&larr;</a>
+			
+		</div>
+		<a class="nav-up" href="/series/my-1st-website">My 1st Website Track</a>
+		<div>
+			
+				<a class="nav-next" href="https://jurjen.dev/tutorial/navbars-and-sass/" rel="next">&rarr;</a>
+			
+		</div>
 	</nav>
 
 

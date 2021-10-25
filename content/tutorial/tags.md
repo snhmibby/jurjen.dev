@@ -1,8 +1,9 @@
 ---
 title: "Ordering content"
-date: 2021-10-23T03:26:20+02:00
+date: 2021-10-23
 draft: false
-series: "Hugo"
+series: "My 1st Website"
+weight: 4
 tags: ["Tags", "Taxonomies", "Hugo", "CSS", "Templates"]
 ---
 
@@ -14,7 +15,7 @@ Along the way we discover Hugo's archetypes, front matter, 'taxonomies' and will
 Now we have some documents in our tutorials section, it is time to organize them.
 To this effect we will do the following:
 1. Create an [archetype](https://gohugo.io/content-management/archetypes/) file for tutorials.
-2. We will update the existing tutorials to add these variables to their front matter parameters and we will add add [taxonomies]((https://gohugo.io/content-management/taxonomies/)) to our site.
+2. We will update the existing tutorials to add these variables to their front matter parameters and we will add [taxonomies]((https://gohugo.io/content-management/taxonomies/)) to our site.
 3. Then, we write some templates to display our tutorial subjects and series.
 
 To supplement the official documentation, read some [introductory](https://www.javeriyash.me/blog/hugo-series/) [articles](https://blog.cavelab.dev/2021/07/hugo-series-taxonomy/) about [exactly](https://damien.co/blog/2020-06-29-display-related-content-series-hugo/) this [subject](https://www.kiroule.com/article/add-series-taxonomy-to-hugo-theme/)

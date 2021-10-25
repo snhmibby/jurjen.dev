@@ -6,13 +6,31 @@
     <description>Recent content in Series on jurjen.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Oct 2021 03:26:20 +0200</lastBuildDate><atom:link href="https://jurjen.dev/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Oct 2021 01:18:48 +0200</lastBuildDate><atom:link href="https://jurjen.dev/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hugo</title>
-      <link>https://jurjen.dev/series/hugo/</link>
-      <pubDate>Sat, 23 Oct 2021 03:26:20 +0200</pubDate>
+      <title>Beginner Javascript</title>
+      <link>https://jurjen.dev/series/beginner-javascript/</link>
+      <pubDate>Mon, 25 Oct 2021 01:18:48 +0200</pubDate>
       
-      <guid>https://jurjen.dev/series/hugo/</guid>
+      <guid>https://jurjen.dev/series/beginner-javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>My 1st Website</title>
+      <link>https://jurjen.dev/series/my-1st-website/</link>
+      <pubDate>Sun, 24 Oct 2021 22:00:07 +0200</pubDate>
+      
+      <guid>https://jurjen.dev/series/my-1st-website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://jurjen.dev/series/programming/</link>
+      <pubDate>Sun, 24 Oct 2021 02:02:06 +0200</pubDate>
+      
+      <guid>https://jurjen.dev/series/programming/</guid>
       <description></description>
     </item>
     
