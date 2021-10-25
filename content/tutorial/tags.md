@@ -119,20 +119,25 @@ Our partial is included by layout/tutorial/single.html:
 {{ end }}
 ```
 
-The prev/next navigation is simply centered with a flex display.
-It's a bit rough around the edges, but it will do for now.
+The prev/next navigation is simply centered with a grid display.
 
 navbar.scss:
 ```SCSS
 .nav-series {
-	display: flex;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: 2fr 1fr 2fr;
+	text-align: center;
 	a {
 		text-decoration: none;
-		display: block;
-		padding: 5px;
+	}
+	.nav-prev {
+		text-align: right;
+	}
+	.nav-next {
+		text-align: left;
 	}
 }
+
 ```
 
 ## A Card view

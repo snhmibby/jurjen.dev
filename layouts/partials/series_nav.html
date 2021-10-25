@@ -14,15 +14,15 @@
 		{{ end }}
 	{{ end }}
 	<nav class="nav-series">
-		<div>
+		<div class="nav-prev">
 			{{ with index .Scratch.Values "prev"}}
-				<a class="nav-prev" href="{{- .Permalink -}}" rel="prev">&larr;</a>
+				<a href="{{- .Permalink -}}" rel="prev">&larr;</a>
 			{{ end }}
 		</div>
 		<a class="nav-up" href="/series/{{.Params.series | urlize}}">{{.Params.series}} Track</a>
-		<div>
+		<div class="nav-next">
 			{{ with index .Scratch.Values "next"}}
-				<a class="nav-next" href="{{- .Permalink -}}" rel="next">&rarr;</a>
+				<a href="{{- .Permalink -}}" rel="next">&rarr;</a>
 			{{ end }}
 		</div>
 	</nav>

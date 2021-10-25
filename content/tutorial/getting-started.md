@@ -16,7 +16,7 @@ We will look at the [Hugo](http://gohugo.io) [site generator](https://en.wikiped
 [Hugo](http://gohugo.io) is a program that takes a collection of markdown files and turns it into a nice website. It has many nice features, it's fast and it's written in
 Go! What more could you want?
 
-Unfortunately, it's a complicated to get up to speed with Hugo. The
+Unfortunately, it's complicated to get up to speed with Hugo. The
 [documentation](https://gohugo.io/documentation/) does a good job of explaining
 the functions, but where to start?
 
