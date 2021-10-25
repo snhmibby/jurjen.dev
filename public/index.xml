@@ -8,14 +8,50 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 21 Oct 2021 23:13:20 +0200</lastBuildDate><atom:link href="https://jurjen.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Introduction</title>
-      <link>https://jurjen.dev/tutorial/introduction/</link>
-      <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
+      <title>Basic DOM traversal</title>
+      <link>https://jurjen.dev/tutorial/collapse-article/</link>
+      <pubDate>Mon, 25 Oct 2021 08:49:11 +0200</pubDate>
       
-      <guid>https://jurjen.dev/tutorial/introduction/</guid>
-      <description>&lt;p&gt;In this series we will explore the basics of HTML, Javascript, CSS and web
-development by creating a cool tutorial website from the ground up using the
-Hugo static website generator.&lt;/p&gt;</description>
+      <guid>https://jurjen.dev/tutorial/collapse-article/</guid>
+      <description>Having made such a nice collapsible in the last tutorial, it would be nice if we can apply it to make an entire article foldable. Taking a quick look at the HTML output of our articles it is obvious that it won&amp;rsquo;t be as easy as making every h1, h2, h3 element collapsible &amp;ndash; our markdown converter appears to be making a flat file, even though it&amp;rsquo;s input is tree structured by the header tags.</description>
+    </item>
+    
+    <item>
+      <title>Collapsible</title>
+      <link>https://jurjen.dev/tutorial/collapsible/</link>
+      <pubDate>Mon, 25 Oct 2021 01:18:48 +0200</pubDate>
+      
+      <guid>https://jurjen.dev/tutorial/collapsible/</guid>
+      <description>&lt;p&gt;We will make a component that can show or collapse its content so a page isn&amp;rsquo;t cluttered too much.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Finale</title>
+      <link>https://jurjen.dev/tutorial/finale/</link>
+      <pubDate>Sun, 24 Oct 2021 22:00:07 +0200</pubDate>
+      
+      <guid>https://jurjen.dev/tutorial/finale/</guid>
+      <description>&lt;p&gt;We look back at building our first website and look forward to what else we can learn!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bruteforcing sudokus</title>
+      <link>https://jurjen.dev/tutorial/bruteforce/</link>
+      <pubDate>Sun, 24 Oct 2021 02:02:06 +0200</pubDate>
+      
+      <guid>https://jurjen.dev/tutorial/bruteforce/</guid>
+      <description>&lt;p&gt;Bruteforcing is a simple programming technique for exploring the entire
+solution space until a correct solution is found.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ordering content</title>
+      <link>https://jurjen.dev/tutorial/tags/</link>
+      <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jurjen.dev/tutorial/tags/</guid>
+      <description>&lt;p&gt;Lets organize the tutorial collection using article tags and tutorial series.
+Along the way we discover Hugo&amp;rsquo;s archetypes, front matter, &amp;lsquo;taxonomies&amp;rsquo; and will create a simple card view with CSS.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -41,42 +77,14 @@ bit of Javascript programming.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Ordering content</title>
-      <link>https://jurjen.dev/tutorial/tags/</link>
-      <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
+      <title>Introduction</title>
+      <link>https://jurjen.dev/tutorial/introduction/</link>
+      <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://jurjen.dev/tutorial/tags/</guid>
-      <description>&lt;p&gt;Lets organize the tutorial collection using article tags and tutorial series.
-Along the way we discover Hugo&amp;rsquo;s archetypes, front matter, &amp;lsquo;taxonomies&amp;rsquo; and will create a simple card view with CSS.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Collapsible</title>
-      <link>https://jurjen.dev/tutorial/accordion/</link>
-      <pubDate>Mon, 25 Oct 2021 01:18:48 +0200</pubDate>
-      
-      <guid>https://jurjen.dev/tutorial/accordion/</guid>
-      <description>&lt;p&gt;We will make a simple &amp;ldquo;collapsible&amp;rdquo; display.
-An collapsible is a component that can show or collapse its content so a page isn&amp;rsquo;t cluttered too much.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Finale</title>
-      <link>https://jurjen.dev/tutorial/finale/</link>
-      <pubDate>Sun, 24 Oct 2021 22:00:07 +0200</pubDate>
-      
-      <guid>https://jurjen.dev/tutorial/finale/</guid>
-      <description>&lt;p&gt;We look back at building our first website and look forward to what else we can learn!&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Bruteforcing sudokus</title>
-      <link>https://jurjen.dev/tutorial/bruteforce/</link>
-      <pubDate>Sun, 24 Oct 2021 02:02:06 +0200</pubDate>
-      
-      <guid>https://jurjen.dev/tutorial/bruteforce/</guid>
-      <description>&lt;p&gt;Bruteforcing is a simple programming technique for exploring the entire
-solution space until a correct solution is found.&lt;/p&gt;</description>
+      <guid>https://jurjen.dev/tutorial/introduction/</guid>
+      <description>&lt;p&gt;In this series we will explore the basics of HTML, Javascript, CSS and web
+development by creating a cool tutorial website from the ground up using the
+Hugo static website generator.&lt;/p&gt;</description>
     </item>
     
   </channel>

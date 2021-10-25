@@ -3,7 +3,6 @@ title: "Navigation"
 date: 2021-10-22
 draft: false
 series: "My 1st Website"
-weight: 3
 tags: ["Hugo", "CSS", "jQuery", "Javascript"]
 ---
 
@@ -31,7 +30,7 @@ In partial/head.html, you will want something like this:
 {{ $site := resources.Get "scss/site.scss" | toCSS }}
 <link rel="stylesheet" href="{{$site.RelPermalink}}">
 ```
-This is called a [Pipeline](https://gohugo.io/templates/introduction/#pipes),
+This is called a [pipeline](https://gohugo.io/templates/introduction/#pipes),
 they string [template](https://gohugo.io/templates/introduction/) functions
 together. This example will look up 'assets/scss/site.scss' call a SASS
 'compiler' on it (which produces a CSS object) and then later we use the
@@ -134,7 +133,12 @@ The CSS looks like this:
 3. Create ```partials/navbar.html``` and add it in the default baseof.html template in the HTML body.
 4. Create ```assets/navbar.scss```, include 'navbar.scss' in 'site.scss'.
 
-Our navigation bar should be added on all pages now! Pretty cool!
+Our navigation bar will be added on every page on the entire site! Notice how
+we only had to include it explicitly in one place.
 
 # Exercises:
-- Importing the entire jQuery library just because we want to use a single function is wasteful. Implement the toggleClass function using [standard Javascript functions](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
+- Importing the entire jQuery library just because we want to use a single
+  function is wasteful. Implement the toggleMenu function using [standard
+  Javascript
+  functions](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
+

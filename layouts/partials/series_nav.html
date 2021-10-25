@@ -2,13 +2,14 @@
 	{{ $curPage := .Permalink }}
 	{{ $key := .Params.series | urlize }}
 	{{ $series := index .Site.Taxonomies.series $key }}
-	{{ range $i, $p := $series.Pages }}
+	{{ $sorted := $series.Pages.ByDate }}
+	{{ range $i, $p := $sorted }}
 		{{ if eq $curPage $p.Permalink }}
 			{{ if gt $i 0 }}
-				{{ .Scratch.Set "prev" (index $series (sub $i 1)) }}
+				{{ .Scratch.Set "prev" (index $sorted (sub $i 1)) }}
 			{{ end }}
 			{{ if lt $i ((sub (len $series) 1)) }}
-				{{ .Scratch.Set "next" (index $series (add $i 1)) }}
+				{{ .Scratch.Set "next" (index $sorted (add $i 1)) }}
 			{{ end }}
 		{{ end }}
 	{{ end }}

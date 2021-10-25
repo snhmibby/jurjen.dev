@@ -3,7 +3,6 @@ title: "Getting Started!"
 date: 2021-10-22
 draft: false
 series: "My 1st Website"
-weight: 2
 tags: ["Hugo", "Markdown", "HTML", "Templates"]
 ---
 
@@ -36,7 +35,7 @@ Hugo takes the collection of markdown in the content/ directory, applies the
 HTML templates in the layout/ directory to produce a site in the public/
 directory.
 
-### Creating a barebones Hugo website
+## Creating a barebones website
 1. Create a new hugo site (```hugo new site my-cool-website```).
 2. Create the following basic templates.
 

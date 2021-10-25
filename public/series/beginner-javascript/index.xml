@@ -6,15 +6,23 @@
     <description>Recent content in Beginner Javascript on jurjen.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Oct 2021 01:18:48 +0200</lastBuildDate><atom:link href="https://jurjen.dev/series/beginner-javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Oct 2021 08:49:11 +0200</lastBuildDate><atom:link href="https://jurjen.dev/series/beginner-javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic DOM traversal</title>
+      <link>https://jurjen.dev/tutorial/collapse-article/</link>
+      <pubDate>Mon, 25 Oct 2021 08:49:11 +0200</pubDate>
+      
+      <guid>https://jurjen.dev/tutorial/collapse-article/</guid>
+      <description>Having made such a nice collapsible in the last tutorial, it would be nice if we can apply it to make an entire article foldable. Taking a quick look at the HTML output of our articles it is obvious that it won&amp;rsquo;t be as easy as making every h1, h2, h3 element collapsible &amp;ndash; our markdown converter appears to be making a flat file, even though it&amp;rsquo;s input is tree structured by the header tags.</description>
+    </item>
+    
     <item>
       <title>Collapsible</title>
-      <link>https://jurjen.dev/tutorial/accordion/</link>
+      <link>https://jurjen.dev/tutorial/collapsible/</link>
       <pubDate>Mon, 25 Oct 2021 01:18:48 +0200</pubDate>
       
-      <guid>https://jurjen.dev/tutorial/accordion/</guid>
-      <description>&lt;p&gt;We will make a simple &amp;ldquo;collapsible&amp;rdquo; display.
-An collapsible is a component that can show or collapse its content so a page isn&amp;rsquo;t cluttered too much.&lt;/p&gt;</description>
+      <guid>https://jurjen.dev/tutorial/collapsible/</guid>
+      <description>&lt;p&gt;We will make a component that can show or collapse its content so a page isn&amp;rsquo;t cluttered too much.&lt;/p&gt;</description>
     </item>
     
   </channel>

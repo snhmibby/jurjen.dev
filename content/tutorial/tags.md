@@ -3,7 +3,6 @@ title: "Ordering content"
 date: 2021-10-23
 draft: false
 series: "My 1st Website"
-weight: 4
 tags: ["Tags", "Taxonomies", "Hugo", "CSS", "Templates"]
 ---
 
@@ -11,7 +10,7 @@ Lets organize the tutorial collection using article tags and tutorial series.
 Along the way we discover Hugo's archetypes, front matter, 'taxonomies' and will create a simple card view with CSS.
 <!--more-->
 
-# Creating order: action plan.
+# Order documents in series
 Now we have some documents in our tutorials section, it is time to organize them.
 To this effect we will do the following:
 1. Create an [archetype](https://gohugo.io/content-management/archetypes/) file for tutorials.
@@ -20,7 +19,7 @@ To this effect we will do the following:
 
 To supplement the official documentation, read some [introductory](https://www.javeriyash.me/blog/hugo-series/) [articles](https://blog.cavelab.dev/2021/07/hugo-series-taxonomy/) about [exactly](https://damien.co/blog/2020-06-29-display-related-content-series-hugo/) this [subject](https://www.kiroule.com/article/add-series-taxonomy-to-hugo-theme/)
 
-## Create an archetype
+## Add archetype for tutorial markdown files
 An [archetype](https://gohugo.io/content-management/archetypes/) is a text
 template that generates the initial markdown file when you create content with
 'hugo new foo/article.md' This sets default fields in the front matter and adds
@@ -50,7 +49,7 @@ Sketch steps to implement solution
 # Conclusion
 ```
 
-### Brief intro to Taxonomies
+## Brief intro to Taxonomies
 A [taxonomy](https://gohugo.io/content-management/taxonomies/) is a relation
 between articles. An example is the default 'tags' field. All articles with the
 same tag have some relation with each other. Because tags are built in, you can
@@ -66,7 +65,7 @@ plugins.  To turn it on, add the following to the configuration file:
 ```
 Bam, that's everything. Go check out /series on your site!
 
-### More navigation
+## More navigation
 Now that articles can be part of a series (sorted by date, by default), we can
 add links to the previous and next article in the series. This requires a
 little bit of template programming.
@@ -136,7 +135,7 @@ navbar.scss:
 }
 ```
 
-### A nice list view
+## A Card view
 Remember those summaries we made earlier?
 Now it is time to use them! First, we will make a [content view](https://gohugo.io/templates/views/) that provides a summary of a page.
 
@@ -227,24 +226,14 @@ and to wrap it up, we create a simple card grid that holds 1 article on
 small screens, 2 on medium screens and 3 on big screens.
 ```SCSS
 .card-grid {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+	display: grid;
 
-	section {
-		max-width: 90%;
-	}
-
-	@media (min-width: 350px) {
-		section {
-			max-width: 45%;
-		}
+	@media (min-width: 450px) {
+		grid-template-columns: 1fr 1fr;
 	}
 
 	@media (min-width: 700px) {
-		section {
-			max-width: 30%;
-		}
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
 ```

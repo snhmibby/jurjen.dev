@@ -10,7 +10,6 @@ We look back at building our first website and look forward to what else we can 
 
 <!--more-->
 
-# It was fun, but
-I'm spending more time editing tutorials than that I am learning website
-building.  I will focus my time on building nice things and adding a tutorial
-about it when I am finished and want to document how to do something.
+With some simple steps, templates and markdown files, we have created a functional (if poorly designed) website.
+If you want to learn more in more standalone tutorials, check the [Beginner Javascript](/series/beginner-javascript/)
+or [Beginner CSS](/series/beginner-css) tracks.

@@ -1,0 +1,19 @@
+{{/* DEFAULTS */}}
+{{ $slug    := .Get 0 }}
+{{ $user    := or (.Get "user") "jurjen-depurjen" }}
+{{ $height  := or (.Get "height") 500 }}
+{{ $tab     := or (.Get "tab") "result" }}
+
+
+<p 
+    class="codepen" 
+    data-slug-hash   ="{{ $slug }}"
+    data-height      ="{{ $height }}"
+    data-default-tab ="{{ $tab }}"
+    data-user        ="{{ $user }}"
+    style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+    <span><a href="https://codepen.io/{{$user}}/pen/{{$slug}}">See the Pen </a></span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+

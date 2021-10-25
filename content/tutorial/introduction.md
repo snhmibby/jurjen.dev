@@ -3,7 +3,6 @@ title: Introduction
 date: 2021-10-21
 draft: false
 series: "My 1st Website"
-weight: 1
 tags: []
 ---
 

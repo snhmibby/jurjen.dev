@@ -8,14 +8,22 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Oct 2021 22:00:07 +0200</lastBuildDate><atom:link href="https://jurjen.dev/series/my-1st-website/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Introduction</title>
-      <link>https://jurjen.dev/tutorial/introduction/</link>
-      <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
+      <title>Finale</title>
+      <link>https://jurjen.dev/tutorial/finale/</link>
+      <pubDate>Sun, 24 Oct 2021 22:00:07 +0200</pubDate>
       
-      <guid>https://jurjen.dev/tutorial/introduction/</guid>
-      <description>&lt;p&gt;In this series we will explore the basics of HTML, Javascript, CSS and web
-development by creating a cool tutorial website from the ground up using the
-Hugo static website generator.&lt;/p&gt;</description>
+      <guid>https://jurjen.dev/tutorial/finale/</guid>
+      <description>&lt;p&gt;We look back at building our first website and look forward to what else we can learn!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ordering content</title>
+      <link>https://jurjen.dev/tutorial/tags/</link>
+      <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jurjen.dev/tutorial/tags/</guid>
+      <description>&lt;p&gt;Lets organize the tutorial collection using article tags and tutorial series.
+Along the way we discover Hugo&amp;rsquo;s archetypes, front matter, &amp;lsquo;taxonomies&amp;rsquo; and will create a simple card view with CSS.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -41,22 +49,14 @@ bit of Javascript programming.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Ordering content</title>
-      <link>https://jurjen.dev/tutorial/tags/</link>
-      <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
+      <title>Introduction</title>
+      <link>https://jurjen.dev/tutorial/introduction/</link>
+      <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://jurjen.dev/tutorial/tags/</guid>
-      <description>&lt;p&gt;Lets organize the tutorial collection using article tags and tutorial series.
-Along the way we discover Hugo&amp;rsquo;s archetypes, front matter, &amp;lsquo;taxonomies&amp;rsquo; and will create a simple card view with CSS.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Finale</title>
-      <link>https://jurjen.dev/tutorial/finale/</link>
-      <pubDate>Sun, 24 Oct 2021 22:00:07 +0200</pubDate>
-      
-      <guid>https://jurjen.dev/tutorial/finale/</guid>
-      <description>&lt;p&gt;We look back at building our first website and look forward to what else we can learn!&lt;/p&gt;</description>
+      <guid>https://jurjen.dev/tutorial/introduction/</guid>
+      <description>&lt;p&gt;In this series we will explore the basics of HTML, Javascript, CSS and web
+development by creating a cool tutorial website from the ground up using the
+Hugo static website generator.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,0 +1,15 @@
+baseURL: https://jurjen.dev
+languageCode: en-us
+title: jurjen.dev
+sectionPagesMenu: main
+
+taxonomies:
+  tag: tags
+  series: series
+
+markup:
+  tableOfContents:
+    startLevel: 1
+    endlevel: 3
+    ordered: false
+

@@ -60,6 +60,7 @@
 	
 	
 	
+	
 		
 	
 		
@@ -95,6 +96,20 @@
 <hr/>
 <article>
 	<h1>Navigation</h1>
+	<aside class="table-of-contents">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#learning-css-sass-edition">Learning CSS, SASS edition</a>
+      <ul>
+        <li><a href="#set-up-a-sass-pipeline-with-hugo">Set up a SASS pipeline with Hugo</a></li>
+        <li><a href="#adding-a-navigation-bar-to-the-website">Adding a navigation bar to the website</a></li>
+      </ul>
+    </li>
+    <li><a href="#follow-along">Follow along!</a></li>
+    <li><a href="#exercises">Exercises:</a></li>
+  </ul>
+</nav>
+	</aside>
 	<p>In this tutorial, we will create a simple navigation bar that works for both
 mobile and desktop browsers. We will look into Hugos Pipelines and do our first
 bit of Javascript programming.</p>
@@ -111,7 +126,7 @@ Conveniently, Hugo has excellent support for them.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!-- Custom CSS --&gt;</span>
 {{ $site := resources.Get &#34;scss/site.scss&#34; | toCSS }}
 &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{$site.RelPermalink}}&#34;</span>&gt;
-</code></pre></div><p>This is called a <a href="https://gohugo.io/templates/introduction/#pipes">Pipeline</a>,
+</code></pre></div><p>This is called a <a href="https://gohugo.io/templates/introduction/#pipes">pipeline</a>,
 they string <a href="https://gohugo.io/templates/introduction/">template</a> functions
 together. This example will look up &lsquo;assets/scss/site.scss&rsquo; call a SASS
 &lsquo;compiler&rsquo; on it (which produces a CSS object) and then later we use the
@@ -203,14 +218,19 @@ and update the head.html template so that they are automatically added on all ou
 <li>Create <code>partials/navbar.html</code> and add it in the default baseof.html template in the HTML body.</li>
 <li>Create <code>assets/navbar.scss</code>, include &lsquo;navbar.scss&rsquo; in &lsquo;site.scss&rsquo;.</li>
 </ol>
-<p>Our navigation bar should be added on all pages now! Pretty cool!</p>
+<p>Our navigation bar will be added on every page on the entire site! Notice how
+we only had to include it explicitly in one place.</p>
 <h1 id="exercises">Exercises:</h1>
 <ul>
-<li>Importing the entire jQuery library just because we want to use a single function is wasteful. Implement the toggleClass function using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">standard Javascript functions</a>.</li>
+<li>Importing the entire jQuery library just because we want to use a single
+function is wasteful. Implement the toggleMenu function using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">standard
+Javascript
+functions</a>.</li>
 </ul>
 </article>
 <hr/>
 
+	
 	
 	
 	

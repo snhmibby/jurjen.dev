@@ -1,35 +1,33 @@
+/* a card grid looks like:
+ * <div class="card-grid">
+ *   <section class="summary">
+ *   <section class="summary">
+ *   ...
+ */
 .card-grid {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+	display: grid;
 
-	section {
-		max-width: 90%;
-	}
-
-	@media (min-width: 350px) {
-		section {
-			max-width: 45%;
-		}
+	@media (min-width: 450px) {
+		grid-template-columns: 1fr 1fr;
 	}
 
 	@media (min-width: 700px) {
-		section {
-			max-width: 30%;
-		}
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
 
 .summary {
-	margin: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 3px;
 	padding: 10px;
 	background: orange;
-	border-radius: 15px;
+	border-radius: 5px;
 	h1, p {
 		margin: 1px;
 	}
 	a {
-		text-decoration: none;
 		margin-left: 2px;
 		margin-right: 2px;
 	}

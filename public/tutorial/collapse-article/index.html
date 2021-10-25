@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+
+	
+
+
+	
+	
+	<script src="/js/site.js"></script>
+
+	
+	
+	
+	
+	<link rel="stylesheet" href="/css/site.min.css">
+
+
+	<title>
+		jurjen.dev
+		 | Basic DOM traversal 
+	</title>
+</head>
+<body><nav class="nav-main">
+	<div class="nav-icon-bar">
+		<a href="#" onclick='toggleMenu()'><i class="bi bi-list"></i></a>
+		<a href="/"><i class="bi bi-house-fill"></i></a>
+		<a href="https://wiki.jurjen.dev"><i class="bi bi-stickies-fill"></i></a>
+		<a href="https://github.com/snhmibby"><i class="bi bi-github"></i></a>
+	</div>
+
+	<hr class="nopadding"/>
+	<div id="main-menu" class="nav-menu">
+		<a href="/">Home</a>
+		
+		
+			<a  href="/about/"
+				>
+			About
+			</a>
+		
+			<a  href="/tutorial/"
+				>
+			Tutorials
+			</a>
+		
+
+		<a href="https://wiki.jurjen.dev">Wiki</a>
+		<a href="https://github.com/snhmibby">Github</a>
+	</div>
+</nav>
+
+<div id="content">
+
+	
+	
+	
+	
+	
+		
+	
+		
+			
+				
+			
+			
+		
+	
+	<nav class="nav-series">
+		<div>
+			
+				<a class="nav-prev" href="https://jurjen.dev/tutorial/collapsible/" rel="prev">&larr;</a>
+			
+		</div>
+		<a class="nav-up" href="/series/beginner-javascript">Beginner Javascript Track</a>
+		<div>
+			
+		</div>
+	</nav>
+
+
+<hr/>
+<article>
+	<h1>Basic DOM traversal</h1>
+	<aside class="table-of-contents">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-we-will-do-it">How we will do it</a>
+      <ul>
+        <li><a href="#walking-a-list">Walking a list</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a>
+      <ul>
+        <li><a href="#exercises">Exercises</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</aside>
+	<p>Having made such a nice collapsible in the last tutorial, it would be nice if
+we can apply it to make an entire article foldable. Taking a quick look at the
+HTML output of our articles it is obvious that it won&rsquo;t be as easy as making
+every h1, h2, h3 element collapsible &ndash; our markdown converter appears to be
+making a flat file, even though it&rsquo;s input is tree structured by the header
+tags. However, with some simple Javascript programming, we can still achieve
+our goal.</p>
+<h1 id="how-we-will-do-it">How we will do it</h1>
+<p>There are 2 obvious approaches, one would be to adjust the HTML document so
+that we can use our standard collapsible on every header tag. This seems like
+a clean and neat way to do it. Unfortunately we don&rsquo;t control our markdown generator.
+We will do this with Javascript in some next tutorial about DOM manipulation.</p>
+<p>The other is to walk over the HTML tree starting at the header we want to
+collapse and hide or show everything until we find the next one.  In order to
+achieve this, we will use the <a href="https://devdocs.io/javascript/">Javascript</a>
+<a href="https://devdocs.io/dom/">DOM</a> <a href="https://devdocs.io/dom/element">element</a> interface methods to walk over our
+HTML, toggling display-ability of the nodes we find.</p>
+<p>We will make the following assumptions:</p>
+<ul>
+<li>The only content worth folding is within <code>&lt;article&gt;</code> HTML tags</li>
+<li>The next same level header will be at the same level in the DOM, meaning we will not traverse down children to find the next header.</li>
+</ul>
+<p>We will hardcode some levels of folding, using different classes to toggle content.
+We cannot use our simple toggle-visible class, because different layers of folding would toggle the same visibility!</p>
+<h2 id="walking-a-list">Walking a list</h2>
+<p>If you haven&rsquo;t read the last tutorial <a href="../collapsible/">collapsibles</a>, do
+so now.  This will be basically the same, except we will use the
+<a href="https://devdocs.io/dom/element">elements'</a>
+<a href="https://devdocs.io/dom/element/nextelementsibling">next</a> fields to find
+everything until the next header that is higher or equal to the current one.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">addFold</span>(<span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">foldname</span>) {
+	<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;collapsible&#34;</span>)
+	<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, (<span style="color:#a6e22e">ev</span>) =&gt; {
+		<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">clicked</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ev</span>.<span style="color:#a6e22e">currentTarget</span>
+		<span style="color:#a6e22e">clicked</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#e6db74">&#34;collapsible-closed&#34;</span>)
+		<span style="color:#a6e22e">doAfter</span>(<span style="color:#a6e22e">ev</span>.<span style="color:#a6e22e">currentTarget</span>, (<span style="color:#a6e22e">el</span>) =&gt; {
+			<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#e6db74">&#34;collapsible-hide-&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">foldname</span>)
+		});
+	});
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">lvl</span>(<span style="color:#a6e22e">n</span>) {
+	<span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">tagName</span>) {
+		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;H1&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;H2&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>;
+		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;H3&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">3</span>;
+		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;H4&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">4</span>;
+		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;H5&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">5</span>;
+		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;H6&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">6</span>;
+		<span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">7</span>;
+	}
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doAfter</span>(<span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">fn</span>) {
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">cur</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">nextElementSibling</span>
+	<span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">cur</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">lvl</span>(<span style="color:#a6e22e">node</span>) <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">lvl</span>(<span style="color:#a6e22e">cur</span>)) {
+		<span style="color:#a6e22e">fn</span>(<span style="color:#a6e22e">cur</span>)
+		<span style="color:#a6e22e">cur</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">nextElementSibling</span>
+	}
+}
+
+<span style="color:#75715e">//find all headers in an article and make them foldable
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">article</span> <span style="color:#66d9ef">of</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;article&#34;</span>)) {
+	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">h1</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">article</span>.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;h1&#34;</span>)) {
+		<span style="color:#a6e22e">addFold</span>(<span style="color:#a6e22e">h1</span>, <span style="color:#e6db74">&#34;h1&#34;</span>)
+	}
+	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">h2</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">article</span>.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;h2&#34;</span>)) {
+		<span style="color:#a6e22e">addFold</span>(<span style="color:#a6e22e">h2</span>, <span style="color:#e6db74">&#34;h2&#34;</span>)
+	}
+	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">h3</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">article</span>.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;h3&#34;</span>)) {
+		<span style="color:#a6e22e">addFold</span>(<span style="color:#a6e22e">h3</span>, <span style="color:#e6db74">&#34;h3&#34;</span>)
+	}
+}
+
+</code></pre></div><p>Our CSS is the same as our collapsible CSS, except it adds some
+header-level dependent classes to toggle visibility.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SCSS" data-lang="SCSS">
+<span style="color:#a6e22e">.collapsible</span> {
+	<span style="color:#f92672">display</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">block</span>;
+	<span style="color:#f92672">cursor</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">pointer</span>;
+	<span style="color:#f92672">border-bottom</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">2px</span> <span style="color:#f92672">solid</span> <span style="color:#f92672">darkgrey</span>;
+
+	<span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">::before</span> {
+		<span style="color:#f92672">position</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">absolute</span>;
+		<span style="color:#f92672">content</span><span style="color:#a6e22e">:</span> <span style="color:#e6db74">&#34;-&#34;</span>;
+		<span style="color:#f92672">left</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">10px</span>;
+	}
+	<span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">.collapsible-closed</span><span style="color:#a6e22e">::before</span> {
+		<span style="color:#f92672">content</span><span style="color:#a6e22e">:</span> <span style="color:#e6db74">&#34;+&#34;</span>;
+	}
+}
+
+<span style="color:#a6e22e">.collapsible-hide-h1</span><span style="color:#f92672">,</span>
+<span style="color:#a6e22e">.collapsible-hide-h2</span><span style="color:#f92672">,</span>
+<span style="color:#a6e22e">.collapsible-hide-h3</span> {
+	<span style="color:#f92672">display</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">none</span> <span style="color:#f92672">!</span><span style="color:#f92672">important</span>;
+}
+</code></pre></div><h1 id="conclusion">Conclusion</h1>
+<p>Folding is simple to implement and significantly improves re-readability of long articles :)</p>
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li>We made the assumption that the next same level header will be at the same
+level in the DOM tree. This seems sensible, but not everybody is.  Use the
+elements' <a href="https://devdocs.io/dom/element/children">children</a> to <a href="">recurse</a>
+down and stop when you find a higher or same lvl() header.</li>
+<li>(for extremely poor formatted HTML, I guess). Element is a subclass of
+<a href="https://devdocs.io/dom/node">Node</a>, use the
+<a href="https://devdocs.io/dom/node/parentnode">parentNode</a> to go up to find the
+next same level header also.</li>
+<li>The UI doesn&rsquo;t clue people how far a header reaches.  Create visual
+clues on the page that give the user an indication of what will be
+folded and on what level a header operates.
+Indentation and highlighting might help. So might CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">Custom properties</a></li>
+</ol>
+
+</article>
+<hr/>
+
+	
+	
+	
+	
+	
+		
+	
+		
+			
+				
+			
+			
+		
+	
+	<nav class="nav-series">
+		<div>
+			
+				<a class="nav-prev" href="https://jurjen.dev/tutorial/collapsible/" rel="prev">&larr;</a>
+			
+		</div>
+		<a class="nav-up" href="/series/beginner-javascript">Beginner Javascript Track</a>
+		<div>
+			
+		</div>
+	</nav>
+
+
+
+    </div></body>
+
+</html>
