@@ -1,0 +1,26 @@
+.maze-table {
+	border-spacing: 0;
+	tr, td, button {
+		margin: 0;
+		padding: 0;
+	}
+	button {
+		width: 3rem;
+		height: 3rem;
+		margin-right: -1px;
+		margin-top: -1px;
+		border: 0.5px solid black;
+	}
+	.wall {
+		background-color: #555;
+	}
+	.player {
+		/* todo: draw a circle */
+	}
+	.treasure {
+		/* todo: draw treasure */
+	}
+	.path {
+		/* todo: draw path-marker */
+	}
+}

@@ -7,7 +7,7 @@
 
 
 <!-- Javascript -->
-{{ $siteJS := resources.Get "js/site.js" | babel }}
+{{ $siteJS := resources.Get "js/site.js" | js.Build }}
 <script src="{{$siteJS.RelPermalink}}"></script>
 
 <!-- SCSS -->
