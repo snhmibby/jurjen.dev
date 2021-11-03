@@ -11,4 +11,4 @@ function Example() {
 	);
 }
 
-inits.push(() => ReactDOM.render(<Example/>, document.getElementById("root")));
+ReactDOM.render(<Example/>, document.getElementById("root"));

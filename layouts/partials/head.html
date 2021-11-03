@@ -26,8 +26,9 @@
 	<script src="/lib/react.production.min.js"></script>
 	<script src="/lib/react-dom.production.min.js"></script>
 
+	<!-- the actual test -->
 	{{ $react := resources.Get "react/counter.jsx" | js.Build }}
-	<script src="{{ $react.Permalink }}"></script>
+	<script src="{{ $react.Permalink }}" defer></script>
 
 	<title>
 		{{ .Site.Title }}
