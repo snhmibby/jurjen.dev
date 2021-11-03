@@ -13,3 +13,4 @@ If you are also just starting out, I hope it can be useful for you!
 The wiki is a link to my recently started public private notes.
 Also a link to my github account, where you can find some small toy programs,
 libraries, configuration files and the source for this site.
+I have a  [subdomain](https://frontend-mentor.jurjen.dev) for storing css exercises I did from frontend-mentor, if you're interested.

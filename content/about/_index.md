@@ -18,4 +18,4 @@ computer and networking basics, algorithms and data structures.
 I also have practical experience in organic farming, large animal care (cows & horses),
 building, maintenance and gardening. In short, I am the perfect candidate for the cool hipster job mentioned above!
 
-Don't hesitate to [contact me](maito:info@jurjen.dev)!
+Don't hesitate to [contact me](mailto:info@jurjen.dev)!

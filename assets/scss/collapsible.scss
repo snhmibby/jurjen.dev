@@ -21,4 +21,7 @@
 	&.collapsible-closed::before {
 		content: "+";
 	}
+	&.collapsible-closed+* {
+		display: none !important;
+	}
 }

@@ -2,9 +2,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
-
 	<!-- JQuery
 	<script src="/vendor/jquery-3.6.0.js"></script>
 	-->
@@ -14,12 +11,23 @@
 	{{ $siteJS := resources.Get "js/site.js" | babel }}
 	<script src="{{$siteJS.RelPermalink}}"></script>
 
-	<!-- Custom CSS -->
+	<!-- SCSS -->
 	{{ $options := (dict "targetPath" "css/site.css" "outputStyle" "compressed") }}
 	{{ $siteCSS := resources.Get "scss/site.scss" | toCSS $options }}
 	{{ $css := $siteCSS | minify }}
 	<link rel="stylesheet" href="{{$css.RelPermalink}}">
 
+	<!-- TypeScript -->
+	{{ $ts := resources.Get "ts/hello/world.ts" | js.Build }}
+	<script src="{{ $ts.Permalink }}"> </script>
+
+
+	<!-- React + JSX + TypeScript test.  -->
+	<script src="/lib/react.production.min.js"></script>
+	<script src="/lib/react-dom.production.min.js"></script>
+
+	{{ $react := resources.Get "react/counter.jsx" | js.Build }}
+	<script src="{{ $react.Permalink }}"></script>
 
 	<title>
 		{{ .Site.Title }}

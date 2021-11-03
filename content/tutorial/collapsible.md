@@ -10,7 +10,7 @@ We will make a component that can show or collapse its content so a page isn't c
 <!--more-->
 
 
-# Approach
+# Implementation
 
 We will make a class "collapsible", with the implicit expectation that the next element in the document is its content.
 Clicking the collapsible will open or close its content.
@@ -39,9 +39,7 @@ inits.push(function () {
 	for (let i = 0; i < a.length; i++) {
 		a[i].addEventListener("click", function () {
 			this.classList.toggle("collapsible-closed");
-			var content = this.nextElementSibling;
-			content.classList.toggle('toggle-visible')
-		});
+			});
 	}
 });
 ```
@@ -61,12 +59,10 @@ inits.push(function () {
 	&.collapsible-closed::before {
 		content: "+";
 	}
+	&.collapsible-closed+* {
+		display: none !important;
+	}
 }
-
-.toggle-visible {
-	display: none !important;
-}
-
 ```
 
 ## Try it on codepen

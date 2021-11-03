@@ -19,7 +19,7 @@
 				<a href="{{- .Permalink -}}" rel="prev">&larr;</a>
 			{{ end }}
 		</div>
-		<a class="nav-up" href="/series/{{.Params.series | urlize}}">{{.Params.series}} Track</a>
+		<a class="nav-up" href="/series/{{.Params.series | urlize}}">{{.Params.series}}</a>
 		<div class="nav-next">
 			{{ with index .Scratch.Values "next"}}
 				<a href="{{- .Permalink -}}" rel="next">&rarr;</a>
