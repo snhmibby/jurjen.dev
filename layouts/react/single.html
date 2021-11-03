@@ -1,0 +1,22 @@
+{{ define "head" }}
+
+<!-- React + JSX + TypeScript test.  -->
+<script src="/lib/react.production.min.js"></script>
+<script src="/lib/react-dom.production.min.js"></script>
+
+<!--a test -->
+{{ $react := resources.Get "react/counter.jsx" | js.Build }}
+<script src="{{ $react.Permalink }}" defer></script>
+
+
+{{ end }}
+
+{{ define "main" }}
+<main>
+	<article>
+		{{ .Content }}
+	</article>
+</main>
+<div id="React-Test"></div>
+{{ end }}
+

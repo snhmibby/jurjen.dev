@@ -1,37 +1,27 @@
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- JQuery
-	<script src="/vendor/jquery-3.6.0.js"></script>
-	-->
-
-
-	<!-- Javascript -->
-	{{ $siteJS := resources.Get "js/site.js" | babel }}
-	<script src="{{$siteJS.RelPermalink}}"></script>
-
-	<!-- SCSS -->
-	{{ $options := (dict "targetPath" "css/site.css" "outputStyle" "compressed") }}
-	{{ $siteCSS := resources.Get "scss/site.scss" | toCSS $options }}
-	{{ $css := $siteCSS | minify }}
-	<link rel="stylesheet" href="{{$css.RelPermalink}}">
-
-	<!-- TypeScript -->
-	{{ $ts := resources.Get "ts/hello/world.ts" | js.Build }}
-	<script src="{{ $ts.Permalink }}"> </script>
+<!-- JQuery
+<script src="/vendor/jquery-3.6.0.js"></script>
+-->
 
 
-	<!-- React + JSX + TypeScript test.  -->
-	<script src="/lib/react.production.min.js"></script>
-	<script src="/lib/react-dom.production.min.js"></script>
+<!-- Javascript -->
+{{ $siteJS := resources.Get "js/site.js" | babel }}
+<script src="{{$siteJS.RelPermalink}}"></script>
 
-	<!-- the actual test -->
-	{{ $react := resources.Get "react/counter.jsx" | js.Build }}
-	<script src="{{ $react.Permalink }}" defer></script>
+<!-- SCSS -->
+{{ $options := (dict "targetPath" "css/site.css" "outputStyle" "compressed") }}
+{{ $siteCSS := resources.Get "scss/site.scss" | toCSS $options }}
+{{ $css := $siteCSS | minify }}
+<link rel="stylesheet" href="{{$css.RelPermalink}}">
 
-	<title>
-		{{ .Site.Title }}
-		{{ if not .IsHome }} | {{ .Title }} {{ end }}
-	</title>
-</head>
+<!-- TypeScript -->
+{{ $ts := resources.Get "ts/hello/world.ts" | js.Build }}
+<script src="{{ $ts.Permalink }}"> </script>
+
+<title>
+	{{ .Site.Title }}
+	{{ if not .IsHome }} | {{ .Title }} {{ end }}
+</title>
+
