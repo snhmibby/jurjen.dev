@@ -1,5 +1,3 @@
-//import sum from "lib/math"; //top level
-
 //site global js functions
 let inits = []
 window.onload = function () {
@@ -185,6 +183,3 @@ for (var n of fib2()) {
 		break;
 	console.log(n)
 }
-
-//libraries:
-console.log("using imported function: " + math.sum(1337, 0));

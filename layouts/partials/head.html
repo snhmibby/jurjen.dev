@@ -12,8 +12,7 @@
 
 <!-- SCSS -->
 {{ $options := (dict "targetPath" "css/site.css" "outputStyle" "compressed") }}
-{{ $siteCSS := resources.Get "scss/site.scss" | toCSS $options }}
-{{ $css := $siteCSS | minify }}
+{{ $css := resources.Get "scss/site.scss" | toCSS $options | minify }}
 <link rel="stylesheet" href="{{$css.RelPermalink}}">
 
 <!-- TypeScript -->
