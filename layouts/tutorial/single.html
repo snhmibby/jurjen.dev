@@ -1,13 +1,13 @@
 {{ define "main" }}
-{{ partial "series_nav.html" . }}
-<hr/>
-<article>
-	<h1>{{.Title}}</h1>
-	<aside class="table-of-contents">
-		{{ .TableOfContents }}
-	</aside>
-	{{ .Content }}
-</article>
-<hr/>
-{{ partial "series_nav.html" . }}
+	{{ partial "series_nav.html" . }}
+	<hr/>
+	<article>
+		<h1>{{.Title}}</h1>
+		<aside class="table-of-contents">
+			{{ .TableOfContents }}
+		</aside>
+		{{ .Content }}
+	</article>
+	<hr/>
+	{{ partial "series_nav.html" . }}
 {{ end }}

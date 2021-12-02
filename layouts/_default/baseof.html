@@ -8,9 +8,9 @@
 <body>
     {{- partial "navbar.html" . -}}
     {{- partial "header.html" . -}}
-    <div id="content">
+    <main>
         {{- block "main" . }}{{- end }}
-    </div>
+    </main>
     {{- partial "footer.html" . -}}
 
 </body>

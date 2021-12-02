@@ -1,5 +1,4 @@
 {{ define "main" }}
-<main>
 	<h1>{{ .Title }}</h1>
 	{{ range $k,$v := .Site.Taxonomies.series }}
 		<section>
@@ -11,5 +10,4 @@
 			</div>
 		</section>
 	{{ end }}
-</main>
 {{ end }}

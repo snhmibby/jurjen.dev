@@ -5,7 +5,6 @@
 
 	<!-- get either index.tsx or index.jsx as the main react test file -->
 	{{ with .Resources.GetMatch "index.*sx" }}
-		{{ . }}
 		{{ $js := js.Build . }}
 		<script src="{{ $js.Permalink }}" defer></script>
 	{{ end }}
@@ -17,11 +16,9 @@
 {{ end }}
 
 {{ define "main" }}
-	<main>
-		<article>
-			{{ .Content }}
-		</article>
-	</main>
+	<article>
+		{{ .Content }}
+	</article>
 	<div id="React-Test"></div>
 {{ end }}
 
